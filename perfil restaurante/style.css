@@ -1,0 +1,184 @@
+* {
+    margin: 0px;
+
+}
+
+body {
+    height: 100vh;
+
+    background-color: #424965;
+
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+body > img {
+    width: 100%;
+    height: 50%;
+
+    border-top: solid 25px #202538;
+
+}
+
+
+#area {
+    width: 100%;
+    height: 75%;
+
+    background-color: #424965;
+
+    border-top: solid 25px #2f354d;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+
+}
+
+#inf {
+    width: 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    border: solid 1px #000;
+
+    color: #cdd3eb;
+    font-family: Apple Chancery, cursive;
+    font-size: 125%;
+}
+
+#inf > * {
+    margin: 10px;
+}
+
+#inf > #nota {
+    width: auto;
+    height: auto;
+}
+
+.estrela {
+    width: 3%;
+}
+
+#cardapio {
+    width: 50%;
+    height: auto;
+
+    border: solid 1px #000;
+}
+
+#areaCriticas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.perfilUsu {
+    width: 5%;
+
+    border-radius: 50%;
+}
+
+.critica {
+    background-color: #2f354d;
+    border-radius: 10px;
+}
+
+
+/*
+
+#container1 {
+    width: 30%;
+    height: auto;
+
+    background-color: #353b51;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    border-radius: 10px 10px 0px 0px;
+
+    
+
+}
+
+#container1 > span,#nota {
+    position: relative;
+    left: 10%;
+
+}
+
+#container1 > span,* > span {
+    color: #dad6d3;
+}
+
+#container1 > #banner {
+    width: 100%;
+    height: 50%;
+
+    border-radius: 10px 10px 0px 0px;
+
+
+}
+
+#container1 > div > .estrelas {
+    width: 5%;
+
+}
+
+#container1 > *:not(img) {
+    margin: 10px;
+
+}
+
+#container2 {
+    width: 30%;
+    height: auto;
+
+    background-color: #413551;
+
+    box-sizing: border-box;
+    padding: 10px;
+    border: 10px solid #13151d;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    color: #dad6d3;
+
+}
+
+#container2 > .comidas {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 15px;
+
+}
+
+#container2 > .comidas > img {
+    width: 50%;
+
+    
+}
+
+*/
