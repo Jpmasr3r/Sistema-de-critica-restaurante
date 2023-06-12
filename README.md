@@ -1,17 +1,20 @@
 # trabalho-de-PW
 
-12/06/23 - etapa 1
+## *Falta:*
 
-falta:
+### 12/06/23 - estapa 1
 
--criar input para fazer a critica
+* criar input para fazer a critica
+* formatar os textos
+* criar menus
+* pagina pricipal
+* pagina usuario
+* pagin critico
 
--formatar os textos
+## Feito
 
--criar menus
+### 12/06/23 - estapa 1
 
--pagina pricipal
-
--pagina usuario
-
--pagin critico
+* cardapio adaptativo
+* criticas adaptativas
+* reformulado as cores
