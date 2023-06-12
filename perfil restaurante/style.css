@@ -6,7 +6,7 @@
 body {
     height: 100vh;
 
-    background-color: #424965;
+    background-color: #284ab8;
 
     display: flex;
     justify-content:flex-start;
@@ -19,7 +19,7 @@ body > img {
     width: 100%;
     height: 50%;
 
-    border-top: solid 25px #202538;
+    border-top: solid 25px #192c6d;
 
 }
 
@@ -28,9 +28,9 @@ body > img {
     width: 100%;
     height: 75%;
 
-    background-color: #424965;
+    background-color: #284ab8;
 
-    border-top: solid 25px #2f354d;
+    border-top: solid 25px #29408b;
 
     display: flex;
     justify-content: flex-start;
@@ -48,9 +48,7 @@ body > img {
     align-items: flex-start;
     flex-direction: column;
 
-    border: solid 1px #000;
-
-    color: #cdd3eb;
+    color: #0d0055;
     font-family: Apple Chancery, cursive;
     font-size: 125%;
 }
@@ -68,13 +66,6 @@ body > img {
     width: 3%;
 }
 
-#cardapio {
-    width: 50%;
-    height: auto;
-
-    border: solid 1px #000;
-}
-
 #areaCriticas {
     display: flex;
     justify-content: flex-start;
@@ -83,15 +74,106 @@ body > img {
 
 }
 
+#areaCriticas > h1 {
+    margin: 10px;
+}
+
 .perfilUsu {
-    width: 5%;
+    width: 7%;
 
     border-radius: 50%;
 }
 
 .critica {
-    background-color: #2f354d;
+    margin: 10px;
+    background-color: #17328b;
     border-radius: 10px;
+}
+
+.usu > span {
+    position: relative;
+    top: -10px;
+    font-size: 125%;
+}
+
+.usu,.informacoes {
+    margin: 10px;
+
+}
+
+.texto {
+    margin: 10px;
+    font-size: 120%;
+}
+
+#cardapio {
+    width: 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #284ab8;
+    
+}
+
+#cardapio > h1 {
+    margin: 10px;
+    color: #0d0055;
+}
+
+.categoria > div {
+    width: auto;
+    height: auto;
+    
+    max-width: calc(calc(150px + 20px) * 3);
+
+    background-color: #17328b;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+
+}
+
+.categoria > h2 {
+    text-align: center;
+
+}
+
+.comida {
+    width: 150px;
+    height: 200px;
+
+    margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #284ab8;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+.comida > * {
+    margin: 5px;
+}
+
+.imagemComida {
+    width: 100px;
+    height: 100px;
+
 }
 
 
