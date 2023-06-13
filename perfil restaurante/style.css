@@ -6,31 +6,92 @@
 body {
     height: 100vh;
 
-    background-color: #284ab8;
+    background-color: #73a7a5;
 
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
 }
 
-body > img {
+body>img {
     width: 100%;
     height: 50%;
 
-    border-top: solid 25px #192c6d;
+}
+
+#menu {
+    width: 100%;
+    height: auto;
+
+    background-color: #0a1d29;
+
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+#menu > img {
+    margin: 10px;
+    width: 2.5%;
+}
+
+#links {
+    visibility: hidden;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 150px;
+    min-height: 50px;
+    background-color: #f0ead1;
+    top: 35px;
+    left: calc(100% - 10px);
+    transform: translate(-100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#links > * {
+    margin: 15px;
+}
+
+#menu > img:hover + #links{
+    visibility: visible;
 
 }
+
+#menu > img:hover {
+    transform: rotateZ(90deg);
+}
+
+#links:hover {
+    visibility: visible;
+}
+
+
+#links > a {
+    color: #41848d;
+    text-decoration: none;
+    font-size: 125%;
+}
+
+#links > a:hover {
+    color: #0a1d29;
+}
+
+
+
 
 
 #area {
     width: 100%;
     height: 75%;
 
-    background-color: #284ab8;
-
-    border-top: solid 25px #29408b;
+    border-top: solid 25px #41848d;
 
     display: flex;
     justify-content: flex-start;
@@ -44,22 +105,32 @@ body > img {
     height: auto;
 
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
 
-    color: #0d0055;
-    font-family: Apple Chancery, cursive;
-    font-size: 125%;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #0a1d29;
+
+
 }
 
-#inf > * {
+#inf>h1 {
+    text-align: center;
+    font-size: 275%;
+}
+
+
+#inf>* {
     margin: 10px;
 }
 
-#inf > #nota {
+#inf>#nota {
     width: auto;
     height: auto;
+}
+
+#inf>span>span {
+    font-size: 125%;
 }
 
 .estrela {
@@ -74,7 +145,7 @@ body > img {
 
 }
 
-#areaCriticas > h1 {
+#areaCriticas>h1 {
     margin: 10px;
 }
 
@@ -86,23 +157,24 @@ body > img {
 
 .critica {
     margin: 10px;
-    background-color: #17328b;
+    background-color: #41848d;
     border-radius: 10px;
 }
 
-.usu > span {
+.usu>span {
     position: relative;
     top: -10px;
     font-size: 125%;
 }
 
-.usu,.informacoes {
+.usu,
+.informacoes {
     margin: 10px;
 
 }
 
 .texto {
-    margin: 10px;
+    margin: 20px;
     font-size: 120%;
 }
 
@@ -115,22 +187,29 @@ body > img {
     align-items: center;
     flex-direction: column;
 
-    background-color: #284ab8;
-    
+    font-family: Arial, Helvetica, sans-serif;
+
+
 }
 
-#cardapio > h1 {
+#cardapio>h1 {
     margin: 10px;
-    color: #0d0055;
+    color: #0a1d29;
+    font-size: 275%;
+
 }
 
-.categoria > div {
+.categoria {
+    margin: 20px;
+}
+
+.categoria>div {
     width: auto;
     height: auto;
-    
+
     max-width: calc(calc(150px + 20px) * 3);
 
-    background-color: #17328b;
+    background-color: #41848d;
 
     border-radius: 20px;
 
@@ -142,8 +221,14 @@ body > img {
 
 }
 
-.categoria > h2 {
+.categoria>h2 {
     text-align: center;
+
+    color: #0a1d29;
+
+    font-size: 150%;
+
+    margin: 10px;
 
 }
 
@@ -158,109 +243,63 @@ body > img {
     align-items: center;
     flex-direction: column;
 
-    background-color: #284ab8;
+    background-color: #f0ead1;
 
     border-radius: 10px;
 
     text-align: center;
 
+    color: #0a1d29;
+
+    font-weight: bold;
+    
+
 }
 
-.comida > * {
+.comida>* {
     margin: 5px;
 }
 
 .imagemComida {
     width: 100px;
     height: 100px;
+    border-radius: 10px
 
 }
 
-
-/*
-
-#container1 {
-    width: 30%;
-    height: auto;
-
-    background-color: #353b51;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-
-    border-radius: 10px 10px 0px 0px;
-
-    
-
-}
-
-#container1 > span,#nota {
+#escreverCritica {
+    width: 75%;
+    border: none;
+    border-bottom: solid 3px #41848d;
+    background-color: #0000;
+    color: #0a1d29;
+    margin: 5px;
     position: relative;
-    left: 10%;
-
 }
 
-#container1 > span,* > span {
-    color: #dad6d3;
+#escreverCritica:focus {
+    outline: none;
+    border-bottom: solid 3px #1f4c53;
+    width: 80%;
 }
 
-#container1 > #banner {
-    width: 100%;
-    height: 50%;
-
-    border-radius: 10px 10px 0px 0px;
-
-
+#escreverCritica::placeholder {
+    color: #0a1d29;
+    font-size: 125%;
 }
 
-#container1 > div > .estrelas {
-    width: 5%;
-
-}
-
-#container1 > *:not(img) {
+#addCritica {
+    width: 100px;
+    height: 35px;
+    position: relative;
+    left: 175px;
+    border-radius: 30%;
+    border: none;
+    background-color: #f0ead1;
+    outline: none;
     margin: 10px;
-
 }
 
-#container2 {
-    width: 30%;
-    height: auto;
-
-    background-color: #413551;
-
-    box-sizing: border-box;
-    padding: 10px;
-    border: 10px solid #13151d;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    color: #dad6d3;
-
+#addCritica:hover {
+    outline: solid 2px #0a1d29;
 }
-
-#container2 > .comidas {
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    margin: 15px;
-
-}
-
-#container2 > .comidas > img {
-    width: 50%;
-
-    
-}
-
-*/
