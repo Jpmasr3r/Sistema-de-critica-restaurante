@@ -4,7 +4,7 @@
 
 ### *Cores utilizadas*
 
-#### Perfil restaurante
+#### Perfils
 
 * escuro2 - 0a1d29
 * escuro1 - 41848d
@@ -12,7 +12,7 @@
 * claro1 - 98c0b7
 * claro2 - f0ead1
 
-## *11/06/23 - estapa 1*
+## *11/06/23 - etapa 1*
 
 ### Falta
 
@@ -29,7 +29,7 @@
 * criticas adaptativas
 * reformulado as cores
 
-## *12/06/23 - estapa 1*
+## *12/06/23 - etapa 1*
 
 ### Falta
 
@@ -43,3 +43,16 @@
 * criar input para fazer a critica
 * formatar os textos
 * criar menus
+
+## *13/06/23 - etapa 1*
+
+### Falta
+
+* Logica de fazer critica
+
+### Feito
+
+* pagina pricipal
+* pagina usuario
+* pagin critico
+* logica da pagina princiapal

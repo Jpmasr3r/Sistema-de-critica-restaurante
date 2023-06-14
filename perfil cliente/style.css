@@ -16,8 +16,12 @@ body {
 }
 
 body>img {
-    width: 100%;
-    height: 50%;
+    width: 5%;
+    border-radius: 50%;
+    margin: 20px;
+    position: absolute;
+    left: 0%;
+    top: 65px;
 
 }
 
@@ -124,18 +128,98 @@ body>img {
     margin: 10px;
 }
 
-#inf>#nota {
-    width: auto;
-    height: auto;
-}
-
 #inf>span>span {
     font-size: 125%;
+}
+
+#restaurantesVisi {
+    width: 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+
+
+}
+
+#restaurantesVisi>h1 {
+    margin: 10px;
+    color: #0a1d29;
+    font-size: 275%;
+
+}
+
+#restaurantesVisi > div {
+    width: auto;
+    height: auto;
+
+    max-width: calc(calc(150px + 20px) * 3);
+
+    background-color: #41848d;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.restaurante {
+    width: 150px;
+    height: 200px;
+
+    margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #f0ead1;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    
+
+    font-weight: bold;
+
+    
+
+}
+
+.restaurante>* {
+    margin: 5px;
+    color: #0a1d29;
+    text-decoration: none;
+}
+
+.restaurante > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px
+
+}
+
+
+
+.restaurante > .nota > .estrela {
+    width: 15%;
 }
 
 .estrela {
     width: 3%;
 }
+
 
 #areaCriticas {
     display: flex;
@@ -161,13 +245,10 @@ body>img {
     border-radius: 10px;
 }
 
-.usu>a {
+.usu>span {
     position: relative;
     top: -10px;
     font-size: 125%;
-    color: #f0ead1;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .usu,
@@ -181,132 +262,4 @@ body>img {
     font-size: 120%;
 }
 
-#cardapio {
-    width: 50%;
-    height: auto;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-
-}
-
-#cardapio>h1 {
-    margin: 10px;
-    color: #0a1d29;
-    font-size: 275%;
-
-}
-
-.categoria {
-    margin: 20px;
-}
-
-.categoria>div {
-    width: auto;
-    height: auto;
-
-    max-width: calc(calc(150px + 20px) * 3);
-
-    background-color: #41848d;
-
-    border-radius: 20px;
-
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-
-}
-
-.categoria>h2 {
-    text-align: center;
-
-    color: #0a1d29;
-
-    font-size: 150%;
-
-    margin: 10px;
-
-}
-
-.comida {
-    width: 150px;
-    height: 200px;
-
-    margin: 10px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    background-color: #f0ead1;
-
-    border-radius: 10px;
-
-    text-align: center;
-
-    color: #0a1d29;
-
-    font-weight: bold;
-    
-
-}
-
-.comida>* {
-    margin: 5px;
-}
-
-.imagemComida {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px
-
-}
-
-#escreverCritica {
-    width: 75%;
-    border: none;
-    border-bottom: solid 3px #41848d;
-    background-color: #0000;
-    color: #0a1d29;
-    margin: 5px;
-    position: relative;
-}
-
-#escreverCritica:focus {
-    outline: none;
-    border-bottom: solid 3px #1f4c53;
-    width: 80%;
-}
-
-#escreverCritica::placeholder {
-    color: #0a1d29;
-    font-size: 125%;
-}
-
-#addCritica {
-    width: auto;
-    height: auto;
-    min-width: 100px;
-    min-height: 35px;
-    position: relative;
-    left: 175px;
-    border-radius: 30%;
-    border: none;
-    background-color: #f0ead1;
-    outline: none;
-    margin: 10px;
-    color: #0a1d29;
-    font-size: 115%;
-}
-
-#addCritica:hover {
-    outline: solid 2px #0a1d29;
-}
