@@ -12,9 +12,11 @@
 * claro1 - 98c0b7
 * claro2 - f0ead1
 
-## *11/06/23 - etapa 1*
+## Etapa 1
 
-### Falta
+### *11/06/23*
+
+#### Falta
 
 * criar input para fazer a critica
 * formatar os textos
@@ -23,36 +25,48 @@
 * pagina usuario
 * pagin critico
 
-### Feito
+#### Feito
 
 * cardapio adaptativo
 * criticas adaptativas
 * reformulado as cores
 
-## *12/06/23 - etapa 1*
+### *12/06/23*
 
-### Falta
+#### Falta
 
 * pagina pricipal
 * pagina usuario
 * pagin critico
 
-### Feito
+#### Feito
 
 * cores refeitas
 * criar input para fazer a critica
 * formatar os textos
 * criar menus
 
-## *13/06/23 - etapa 1*
+### *13/06/23*
 
-### Falta
+#### Falta
 
 * Logica de fazer critica
 
-### Feito
+#### Feito
 
 * pagina pricipal
 * pagina usuario
 * pagin critico
 * logica da pagina princiapal
+
+### *16/06/23 (apresentação)*
+
+#### Falta
+
+* Nada (:
+
+#### Feito
+
+* mudei cores da tela de login
+* resolvi css
+* coloquei placeholders para imagens

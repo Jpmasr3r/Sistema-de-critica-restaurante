@@ -262,4 +262,9 @@ body>img {
     font-size: 120%;
 }
 
-
+#perfil {
+    margin: 10px;
+    position: absolute;
+    top: 100px;
+    left: 175px;
+}

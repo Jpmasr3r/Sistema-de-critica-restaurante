@@ -172,6 +172,13 @@ body>img {
 
 }
 
+#perfil {
+    margin: 10px;
+    position: absolute;
+    top: 100px;
+    left: 175px;
+}
+
 .restaurante {
     width: 150px;
     height: 200px;

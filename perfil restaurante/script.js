@@ -3,9 +3,22 @@ let buttonPes = document.querySelector("#addCritica");
 let critica = document.querySelector("#escreverCritica");
 let nota = document.querySelector("#notaCritica");
 let data = new Date();
+let notaValue = 0;
 
 buttonPes.addEventListener("click", () => {
-  addCritica();
+  if(nota.value != "") {
+    notaValue = nota.value;
+
+  }
+  
+  if (notaValue >= 5) {
+    notaValue = 5;
+  }
+
+  if(critica.value != "") {
+    addCritica();
+
+  }
 });
 
 function addCritica() {
@@ -19,7 +32,7 @@ function addCritica() {
             </div>
 
             <div class="informacoes">
-                <span>${nota.value}</span>
+                <span>${notaValue}</span>
                 ${addEstrelas()}
                 <span>${
                   data.getDate() +
@@ -45,15 +58,11 @@ function addEstrelas() {
   let estrelasAtivas = "";
   let estrelasInativas = "";
 
-  for (i = 1; i <= nota.value; i++) {
-    if (i <= 5) {
-      estrelasAtivas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">\n`;
-    } else {
-      estrelasAtivas += `<img src="../src/img/estrelaAtivaCritico.png" alt="" class="estrela">\n`;
-    }
+  for (i = 1; i <= notaValue; i++) {
+    estrelasAtivas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">\n`;
   }
 
-  for (i = 1; i <= 5 - nota.value; i++) {
+  for (i = 1; i <= 5 - notaValue; i++) {
     estrelasInativas += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">\n`;
   }
 

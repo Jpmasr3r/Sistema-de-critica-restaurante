@@ -186,12 +186,13 @@ body > * {
     width: auto;
     height: auto;
     position: relative;
-    top: 90px;
+    top: 105px;
     background-color: #f0ead1;
     color: #0a1d29;
     border: none;
     border-radius: 20px;
     font-size: 125%;
+    margin: 10px;
 }
 
 #buttonPes:hover {

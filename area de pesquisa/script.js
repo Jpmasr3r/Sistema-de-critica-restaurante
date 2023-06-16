@@ -95,6 +95,16 @@ buttonPes.addEventListener("click", () => {
 })
 
 
+// let text = ffsdgsdg;
+// array.forEach(item => {
+//     let mostrar = '';
+//     if (item.nome.indexOf(text) != -1) {
+//         monstrar += `sdjkfhjsdgfjh`
+//     }
+
+// })
+
+
 
 function printClientes() {
     for(let i = 0; i < clientes.length; i++){

@@ -276,7 +276,7 @@ body>img {
     border-bottom: solid 3px #41848d;
     background-color: #0000;
     color: #0a1d29;
-    margin: 5px;
+    margin: 20px;
     position: relative;
 }
 
@@ -309,4 +309,25 @@ body>img {
 
 #addCritica:hover {
     outline: solid 2px #0a1d29;
+}
+
+#notaCritica {
+    width: 45%;
+    border: none;
+    border-bottom: solid 3px #41848d;
+    background-color: #0000;
+    color: #0a1d29;
+    margin: 20px;
+    position: relative;
+}
+
+#notaCritica:focus {
+    outline: none;
+    border-bottom: solid 3px #1f4c53;
+    width: 60%;
+}
+
+#notaCritica::placeholder {
+    color: #0a1d29;
+    font-size: 125%;
 }
