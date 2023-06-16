@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    
+}
+
+body {
+    background-color: #73a7a5;
+    background-image: url(../src/img/comida.png);
+    background-size: 10%;
+    background-position: -100px -100px;
+
+
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container1 {
+    width: 300px;
+    height: 400px;
+
+    background-color: #41848d;
+
+    border-radius: 25px;
+
+    color: #f0ead1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+
+#container1 > span,h1 {
+    position: relative;
+    left: -25%;
+
+    text-decoration: underline;
+
+}
+
+#container1 > input {
+    width: 70%;
+
+    border: solid 1px #f0ead1;
+    border-width: 0px 0px 2px 0px;
+
+    background-color: #41848d;
+
+    color: #f0ead1;
+    font-size: 90%;
+
+}
+
+#container1 > :focus {
+    outline: none;
+    caret-color: #f0ead1;
+
+}
+
+#container1 > a > #login {
+    width: 100%;
+    height: 100%;
+
+    background-color: #0a1d29;
+    
+    font-size: 150%;
+    color: #f0ead1; 
+    
+    border: none;  
+
+    text-decoration: none;    
+
+}
+
+#container1 > a > #login:hover {
+    background-color: #f0ead1;
+
+    color: #0a1d29;
+    
+}
+
+#container1 > a {
+    width: 80%;
+    height: 10%;
+
+}
+
+
+

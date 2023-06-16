@@ -1,0 +1,270 @@
+* {
+    margin: 0px;
+
+}
+
+body {
+    height: 100vh;
+
+    background-color: #73a7a5;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+body>img {
+    width: 5%;
+    border-radius: 50%;
+    margin: 20px;
+    position: absolute;
+    left: 0%;
+    top: 65px;
+
+}
+
+#menu {
+    width: 100%;
+    height: auto;
+
+    background-color: #0a1d29;
+
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+#menu > img {
+    margin: 10px;
+    width: 2.5%;
+}
+
+#links {
+    visibility: hidden;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 150px;
+    min-height: 50px;
+    background-color: #f0ead1;
+    top: 35px;
+    left: calc(100% - 10px);
+    transform: translate(-100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#links > * {
+    margin: 15px;
+}
+
+#menu > img:hover + #links{
+    visibility: visible;
+
+}
+
+#menu > img:hover {
+    transform: rotateZ(90deg);
+}
+
+#links:hover {
+    visibility: visible;
+}
+
+
+#links > a {
+    color: #41848d;
+    text-decoration: none;
+    font-size: 125%;
+}
+
+#links > a:hover {
+    color: #0a1d29;
+}
+
+
+
+
+
+#area {
+    width: 100%;
+    height: 75%;
+
+    border-top: solid 25px #41848d;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+
+}
+
+#inf {
+    width: 50%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #0a1d29;
+
+
+}
+
+#inf>h1 {
+    text-align: center;
+    font-size: 275%;
+}
+
+
+#inf>* {
+    margin: 10px;
+}
+
+#inf>span>span {
+    font-size: 125%;
+}
+
+#restaurantesVisi {
+    width: 50%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+
+
+}
+
+#restaurantesVisi>h1 {
+    margin: 10px;
+    color: #0a1d29;
+    font-size: 275%;
+
+}
+
+#restaurantesVisi > div {
+    width: auto;
+    height: auto;
+
+    max-width: calc(calc(150px + 20px) * 3);
+
+    background-color: #41848d;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.restaurante {
+    width: 150px;
+    height: 200px;
+
+    margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #f0ead1;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    
+
+    font-weight: bold;
+
+    
+
+}
+
+.restaurante>* {
+    margin: 5px;
+    color: #0a1d29;
+    text-decoration: none;
+}
+
+.restaurante > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px
+
+}
+
+
+
+.restaurante > .nota > .estrela {
+    width: 15%;
+}
+
+.estrela {
+    width: 3%;
+}
+
+
+#areaCriticas {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#areaCriticas>h1 {
+    margin: 10px;
+}
+
+.perfilUsu {
+    width: 7%;
+
+    border-radius: 50%;
+}
+
+.critica {
+    margin: 10px;
+    background-color: #41848d;
+    border-radius: 10px;
+}
+
+.usu>span {
+    position: relative;
+    top: -10px;
+    font-size: 125%;
+}
+
+.usu,
+.informacoes {
+    margin: 10px;
+
+}
+
+.texto {
+    margin: 20px;
+    font-size: 120%;
+}
+
+#perfil {
+    margin: 10px;
+    position: absolute;
+    top: 100px;
+    left: 175px;
+}
