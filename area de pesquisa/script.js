@@ -12,6 +12,11 @@ let clientes = [
     {
         nome: "Albert Einstein",
         src: "../src/img/pessoas/pessoa3.png"
+    },
+    
+    {
+        nome: "Miguel",
+        src: "../src/img/pessoas/pessoa7.png"
     }
 
 
@@ -27,6 +32,11 @@ let criticos = [
     {
         nome: "Rato Ratatuile",
         src: "../src/img/pessoas/pessoa5.png"
+    },
+    
+    {
+        nome: "James da Salada de Fruta",
+        src: "../src/img/pessoas/pessoa6.png"
     }
 
 ];

@@ -4,14 +4,14 @@ let critica = document.querySelector("#escreverCritica");
 let nota = document.querySelector("#notaCritica");
 let data = new Date();
 
-
-buttonPes.addEventListener('click',() => {
-    addCritica();
-})
-
+buttonPes.addEventListener("click", () => {
+  addCritica();
+});
 
 function addCritica() {
-    area.innerHTML += `
+  area.insertAdjacentHTML(
+    "beforeend",
+    `
         <div class="critica">
             <div class="usu">
                 <img src="../src/img/perfil.png" alt="" class="perfilUsu">
@@ -20,12 +20,14 @@ function addCritica() {
 
             <div class="informacoes">
                 <span>${nota.value}</span>
-                <img src="../src/img/estrelaAtiva.png" alt="" class="estrela">
-                <img src="../src/img/estrelaAtiva.png" alt="" class="estrela">
-                <img src="../src/img/estrelaAtiva.png" alt="" class="estrela">
-                <img src="../src/img/estrelaAtiva.png" alt="" class="estrela">
-                <img src="../src/img/estrelaInativa.png" alt="" class="estrela">
-                <span>${data.getDate()+"/"+(data.getMonth()+1)+"/"+data.getFullYear()}</span>
+                ${addEstrelas()}
+                <span>${
+                  data.getDate() +
+                  "/" +
+                  (data.getMonth() + 1) +
+                  "/" +
+                  data.getFullYear()
+                }</span>
                 
             </div>
 
@@ -36,11 +38,24 @@ function addCritica() {
         </div>
     
     `
+  );
 }
-
 
 function addEstrelas() {
+  let estrelasAtivas = "";
+  let estrelasInativas = "";
 
+  for (i = 1; i <= nota.value; i++) {
+    if (i <= 5) {
+      estrelasAtivas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">\n`;
+    } else {
+      estrelasAtivas += `<img src="../src/img/estrelaAtivaCritico.png" alt="" class="estrela">\n`;
+    }
+  }
+
+  for (i = 1; i <= 5 - nota.value; i++) {
+    estrelasInativas += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">\n`;
+  }
+
+  return estrelasAtivas + estrelasInativas;
 }
-
-
