@@ -44,7 +44,8 @@ h1 {
   left: -15%;
 }
 
-#container1 > input {
+#container1 > input[type="text"],
+input[type="password"] {
   width: 60%;
 
   border: solid 1px #f0ead1;
@@ -58,7 +59,8 @@ h1 {
   margin: 15px;
 }
 
-#container1 > input:focus {
+#container1 > input[type="text"]:focus,
+input[type="password"]:focus {
   width: 70%;
   border-color: #1f4c53;
   outline: none;

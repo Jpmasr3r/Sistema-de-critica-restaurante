@@ -1,179 +1,246 @@
 let clientes = [
-    {
-        nome: "Roberto Carlos",
-        src: "../src/img/pessoas/pessoa1.png"
-    },
+  {
+    nome: "Roberto Carlos",
+    src: "../src/img/pessoas/pessoa1.png",
+  },
 
-    {
-        nome: "Socrates",
-        src: "../src/img/pessoas/pessoa2.png"
-    },
+  {
+    nome: "Socrates",
+    src: "../src/img/pessoas/pessoa2.png",
+  },
 
-    {
-        nome: "Albert Einstein",
-        src: "../src/img/pessoas/pessoa3.png"
-    },
-    
-    {
-        nome: "Miguel",
-        src: "../src/img/pessoas/pessoa7.png"
-    }
+  {
+    nome: "Albert Einstein",
+    src: "../src/img/pessoas/pessoa3.png",
+  },
 
-
-
+  {
+    nome: "Miguel",
+    src: "../src/img/pessoas/pessoa7.png",
+  },
 ];
 
 let criticos = [
-    {
-        nome: "Érick Jacquin",
-        src: "../src/img/pessoas/pessoa4.png"
-    },
+  {
+    nome: "Érick Jacquin",
+    src: "../src/img/pessoas/pessoa4.png",
+  },
 
-    {
-        nome: "Rato Ratatuile",
-        src: "../src/img/pessoas/pessoa5.png"
-    },
-    
-    {
-        nome: "James da Salada de Fruta",
-        src: "../src/img/pessoas/pessoa6.png"
-    }
+  {
+    nome: "Rato Ratatuile",
+    src: "../src/img/pessoas/pessoa5.png",
+  },
 
+  {
+    nome: "James da Salada de Fruta",
+    src: "../src/img/pessoas/pessoa6.png",
+  },
 ];
 
 let restaurantes = [
-    {
-        nome: "Restaurante da Praia",
-        nota: 2,
-        src: "../src/img/restaurantes/restaurante1.png"
-    },
+  {
+    nome: "Restaurante da Praia",
+    nota: 2,
+    src: "../src/img/restaurantes/restaurante1.png",
+  },
 
-    {
-        nome: "Restaurante da Floresta",
-        nota: 4,
-        src: "../src/img/restaurantes/restaurante2.png"
-    }
-
+  {
+    nome: "Restaurante da Floresta",
+    nota: 4,
+    src: "../src/img/restaurantes/restaurante2.png",
+  },
 ];
 
 let tipo = document.getElementsByName("tipo");
 let buttonPes = document.querySelector("#buttonPes");
 let area = document.querySelector("#area");
+let textoPes = document.querySelector("#texto");
 
 printTodos();
 
 buttonPes.addEventListener("click", () => {
-    area.innerHTML = "";
-    for(let i = 0; i < tipo.length; i++) {
-        if(tipo[i].checked){
-            switch(tipo[i].value){
-                case "nenhum":
-                    printTodos()
-                    break;
-        
-                case "restaurante":
-                    printRestaurantes()
-                    break;
-        
-                case "cliente":
-                    printClientes()
-                    break;
-        
-                case "critico":
-                    printCriticos()
-                    break;
-        
-        
-                
-        
-            }
+  area.innerHTML = "";
+  for (let i = 0; i < tipo.length; i++) {
+    if (tipo[i].checked) {
+      switch (tipo[i].value) {
+        case "nenhum":
+          printTodos();
+          break;
 
-        }
-    
+        case "restaurante":
+          printRestaurantes();
+          break;
+
+        case "cliente":
+          printClientes();
+          break;
+
+        case "critico":
+          printCriticos();
+          break;
+      }
     }
-
-})
-
-
-// let text = ffsdgsdg;
-// array.forEach(item => {
-//     let mostrar = '';
-//     if (item.nome.indexOf(text) != -1) {
-//         monstrar += `sdjkfhjsdgfjh`
-//     }
-
-// })
-
-
+  }
+});
 
 function printClientes() {
-    for(let i = 0; i < clientes.length; i++){
-        area.innerHTML += `
-            <div class="link pessoa">
-                <img src="${clientes[i].src}" alt="">
-                <a href="../perfil cliente/index.html">${clientes[i].nome}</a>
-                <span class="tipo">Cliente</span>
-            </div>
-        
-        
+  if (textoPes.value.length > 0) {
+    clientes.forEach((obj) => {
+      if (
+        obj.nome
+          .toLocaleLowerCase()
+          .startsWith(textoPes.value.toLocaleLowerCase())
+      ) {
+        area.insertAdjacentHTML(
+          "beforeend",
+          `
+                    <div class="link pessoa">
+                        <img src="${obj.src}" alt="">
+                        <a href="../perfil cliente/index.html">${obj.nome}</a>
+                        <span class="tipo">Cliente</span>
+                    </div>
+            
+            
+                    `
+        );
+      }
+    });
+  } else {
+    clientes.forEach((obj) => {
+      area.insertAdjacentHTML(
+        "beforeend",
         `
-
-    }
+                <div class="link pessoa">
+                    <img src="${obj.src}" alt="">
+                    <a href="../perfil cliente/index.html">${obj.nome}</a>
+                    <span class="tipo">Cliente</span>
+                </div>
+        
+        
+            `
+      );
+    });
+  }
 }
 
 function printCriticos() {
-    for(let i = 0; i < criticos.length; i++){
-        area.innerHTML += `
-            <div class="link critico">
-                <img src="${criticos[i].src}" alt="">
-                <a href="../perfil cliente/index.html">${criticos[i].nome}</a>
-                <span class="tipo">Critico</span>
-            </div>
-        
-        
-        `
-
-    }
+  if (textoPes.value.length > 0) {
+    criticos.forEach((obj) => {
+      if (
+        obj.nome
+          .toLocaleLowerCase()
+          .startsWith(textoPes.value.toLocaleLowerCase())
+      ) {
+        area.insertAdjacentHTML(
+          "beforeend",
+          `
+                    <div class="link critico">
+                        <img src="${obj.src}" alt="">
+                        <a href="../perfil cliente/index.html">${obj.nome}</a>
+                        <span class="tipo">Critico</span>
+                    </div>
+                
+                `
+        );
+      }
+    });
+  } else {
+    criticos.forEach((obj) => {
+      if (
+        obj.nome
+          .toLocaleLowerCase()
+          .startsWith(textoPes.value.toLocaleLowerCase())
+      ) {
+        area.insertAdjacentHTML(
+          "beforeend",
+          `
+                    <div class="link critico">
+                        <img src="${obj.src}" alt="">
+                        <a href="../perfil cliente/index.html">${obj.nome}</a>
+                        <span class="tipo">Critico</span>
+                    </div>
+                
+                `
+        );
+      }
+    });
+  }
 }
 
 function printRestaurantes() {
-    for(let i = 0; i < restaurantes.length; i++){
-        area.innerHTML += `
-            <div class="link restaurante">
-                <img src="${restaurantes[i].src}" alt="">
-                <a href="../perfil restaurante/index.html">${restaurantes[i].nome}</a>
-                <div class="nota">
-                </div>
-                <span class="tipo">Restaurante</span>
-            </div>
-        
-        
-        `
-        let nota = document.querySelectorAll(".nota");
-        let j = 1
-
-        for(j = 1; j <= restaurantes[i].nota; j++) {
-            nota[i].innerHTML += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">` 
-
-        }
-
-        for(let p = 0; p <= (5 - j); p++) {
-            console.log("a");
-            nota[i].innerHTML += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">`
-        }
-        
-
-    }
+  if (textoPes.value.length > 0) {
+    restaurantes.forEach((obj) => {
+      if (
+        obj.nome
+          .toLocaleLowerCase()
+          .startsWith(textoPes.value.toLocaleLowerCase())
+      ) {
+        area.insertAdjacentHTML(
+          "beforeend",
+          `
+                    <div class="link restaurante">
+                        <img src="${obj.src}" alt="">
+                        <a href="../perfil restaurante/index.html">${
+                          obj.nome
+                        }</a>
+                        <div class="nota">
+                            ${addEstrelas(obj)}
+                        </div>
+                        <span class="tipo">Restaurante</span>
+                    </div>
+                
+                
+                `
+        );
+      }
+    });
+  } else {
+    restaurantes.forEach((obj) => {
+      if (
+        obj.nome
+          .toLocaleLowerCase()
+          .startsWith(textoPes.value.toLocaleLowerCase())
+      ) {
+        area.insertAdjacentHTML(
+          "beforeend",
+          `
+                    <div class="link restaurante">
+                        <img src="${obj.src}" alt="">
+                        <a href="../perfil restaurante/index.html">${
+                          obj.nome
+                        }</a>
+                        <div class="nota">
+                            ${addEstrelas(obj)}
+                        </div>
+                        <span class="tipo">Restaurante</span>
+                    </div>
+                
+                
+                `
+        );
+      }
+    });
+  }
 }
 
 function printTodos() {
-    area.innerHTML = "";
-    printClientes();
-    printRestaurantes();
-    printCriticos();
-
+  area.innerHTML = "";
+  printClientes();
+  printRestaurantes();
+  printCriticos();
 }
 
+function addEstrelas(obj) {
+  let estrelasAtivas = "";
+  let estrelasInativas = "";
 
+  for (i = 1; i <= obj.nota; i++) {
+    estrelasAtivas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">\n`;
+  }
 
+  for (i = 1; i <= 5 - obj.nota; i++) {
+    estrelasInativas += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">\n`;
+  }
 
+  return estrelasAtivas + estrelasInativas;
+}
