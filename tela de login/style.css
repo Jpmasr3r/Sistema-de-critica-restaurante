@@ -1,94 +1,94 @@
+* {
+    margin: 0px;
+    
+}
+
 body {
-  height: 100vh;
+    background-color: #73a7a5;
+    background-image: url(../src/img/comida.png);
+    background-size: 10%;
+    background-position: -100px -100px;
 
-  background-color: #73a7a5;
-  background-image: url(../src/img/comida.png);
-  background-size: 10%;
-  background-position: -100px -100px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #container1 {
-  width: auto;
-  height: auto;
+    width: 300px;
+    height: 400px;
 
-  min-width: 300px;
-  min-height: 400px;
+    background-color: #41848d;
 
-  background-color: #41848d;
+    border-radius: 25px;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+    color: #f0ead1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 
-  border-radius: 25px;
-
-  color: #f0ead1;
 }
 
-#container1 > span,
-h1 {
-  position: relative;
-  text-decoration: underline;
-}
+#container1 > span,h1 {
+    position: relative;
+    left: -25%;
 
-#container1 > span {
-  left: -25%;
-}
+    text-decoration: underline;
 
-#container1 > h1 {
-  left: -15%;
 }
 
 #container1 > input {
-  width: 60%;
+    width: 70%;
 
-  border: solid 1px #f0ead1;
-  border-width: 0px 0px 2px 0px;
+    border: solid 1px #f0ead1;
+    border-width: 0px 0px 2px 0px;
 
-  background-color: #41848d;
+    background-color: #41848d;
 
-  color: #f0ead1;
-  font-size: 90%;
+    color: #f0ead1;
+    font-size: 90%;
 
-  margin: 15px;
 }
 
-#container1 > input:focus {
-  width: 70%;
-  border-color: #1f4c53;
-  outline: none;
+#container1 > :focus {
+    outline: none;
+    caret-color: #f0ead1;
+
 }
 
-#container1 > a > .botoes {
-  width: 100%;
-  height: 100%;
+#container1 > a > #login {
+    width: 100%;
+    height: 100%;
 
-  background-color: #0a1d29;
+    background-color: #0a1d29;
+    
+    font-size: 150%;
+    color: #f0ead1; 
+    
+    border: none;  
 
-  font-size: 150%;
-  color: #f0ead1;
+    text-decoration: none;    
 
-  border: none;
-
-  text-decoration: none;
 }
 
-#container1 > a > .botoes:hover {
-  background-color: #f0ead1;
+#container1 > a > #login:hover {
+    background-color: #f0ead1;
 
-  color: #0a1d29;
+    color: #0a1d29;
+    
 }
 
 #container1 > a {
-  width: auto;
-  height: 10%;
+    width: 80%;
+    height: 10%;
 
-  min-width: 80%;
-
-  margin: 15px;
 }
+
+
+
