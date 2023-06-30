@@ -6,18 +6,16 @@ let data = new Date();
 let notaValue = 0;
 
 buttonPes.addEventListener("click", () => {
-  if(nota.value != "") {
+  if (nota.value != "") {
     notaValue = nota.value;
-
   }
-  
+
   if (notaValue >= 5) {
     notaValue = 5;
   }
 
-  if(critica.value != "") {
+  if (critica.value != "") {
     addCritica();
-
   }
 });
 

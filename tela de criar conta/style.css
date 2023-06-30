@@ -7,7 +7,7 @@ body {
   height: 100vh;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -42,7 +42,11 @@ h1 {
   text-decoration: underline;
 }
 
-#container1 > input {
+#container1 > h1 {
+  left: -20%;
+}
+
+.textBoxs {
   width: 70%;
 
   border: solid 1px #f0ead1;
@@ -54,12 +58,23 @@ h1 {
   font-size: 90%;
 }
 
-#container1 > :focus {
+.textBoxs:focus {
   outline: none;
   color: #0a1d29;
   caret-color: #0a1d29;
   border-color: #0a1d29;
   width: 80%;
+}
+
+#showPassword {
+  width: 10%;
+  background: none;
+  border: none;
+
+}
+
+#showPassword > img {
+  width: 100%;
 }
 
 #container1 > a > button {

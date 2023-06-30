@@ -4,8 +4,6 @@
 
 ### *Cores utilizadas*
 
-#### Perfils
-
 * escuro2 - 0a1d29
 * escuro1 - 41848d
 * base - 73a7a5

@@ -1,333 +1,308 @@
 * {
-    margin: 0px;
-
+  margin: 0px;
 }
 
 body {
-    height: 100vh;
+  height: 100vh;
 
-    background-color: #73a7a5;
+  background-color: #73a7a5;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
-body>img {
-    width: 100%;
-    height: 50%;
-
+body > img {
+  width: 100%;
+  height: 50%;
 }
 
 #menu {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 
-    background-color: #0a1d29;
+  background-color: #0a1d29;
 
-    display: flex;
-    flex-direction: row-reverse;
-    
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 #menu > img {
-    margin: 10px;
-    width: 2.5%;
+  margin: 10px;
+  width: 2.5%;
 }
 
 #links {
-    visibility: hidden;
-    position: absolute;
-    width: auto;
-    height: auto;
-    min-width: 150px;
-    min-height: 50px;
-    background-color: #f0ead1;
-    top: 35px;
-    left: calc(100% - 10px);
-    transform: translate(-100%);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+  visibility: hidden;
+  position: absolute;
+  width: auto;
+  height: auto;
+  min-width: 150px;
+  min-height: 50px;
+  background-color: #f0ead1;
+  top: 35px;
+  left: calc(100% - 10px);
+  transform: translate(-100%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 #links > * {
-    margin: 15px;
+  margin: 15px;
 }
 
-#menu > img:hover + #links{
-    visibility: visible;
-
+#menu > img:hover + #links {
+  visibility: visible;
 }
 
 #menu > img:hover {
-    transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
 }
 
 #links:hover {
-    visibility: visible;
+  visibility: visible;
 }
 
-
 #links > a {
-    color: #41848d;
-    text-decoration: none;
-    font-size: 125%;
+  color: #41848d;
+  text-decoration: none;
+  font-size: 125%;
 }
 
 #links > a:hover {
-    color: #0a1d29;
+  color: #0a1d29;
 }
 
-
-
-
-
 #area {
-    width: 100%;
-    height: 75%;
+  width: 100%;
+  height: 75%;
 
-    border-top: solid 25px #41848d;
+  border-top: solid 25px #41848d;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
 }
 
 #inf {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
-    color: #0a1d29;
-
-
+  color: #0a1d29;
 }
 
-#inf>h1 {
-    text-align: center;
-    font-size: 275%;
+#inf > h1 {
+  text-align: center;
+  font-size: 275%;
 }
 
-
-#inf>* {
-    margin: 10px;
+#inf > * {
+  margin: 10px;
 }
 
-#inf>#nota {
-    width: auto;
-    height: auto;
+#inf > #nota {
+  width: auto;
+  height: auto;
 }
 
-#inf>span>span {
-    font-size: 125%;
+#inf > span > span {
+  font-size: 125%;
 }
 
 .estrela {
-    width: 3%;
+  width: 3%;
 }
 
 #areaCriticas {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
-#areaCriticas>h1 {
-    margin: 10px;
+#areaCriticas > h1 {
+  margin: 10px;
 }
 
 .perfilUsu {
-    width: 7%;
+  width: 7%;
 
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .critica {
-    margin: 10px;
-    background-color: #41848d;
-    border-radius: 10px;
+  margin: 10px;
+  background-color: #41848d;
+  border-radius: 10px;
 }
 
-.usu>a {
-    position: relative;
-    top: -10px;
-    font-size: 125%;
-    color: #f0ead1;
-    text-decoration: none;
-    font-weight: bold;
+.usu > a {
+  position: relative;
+  top: -10px;
+  font-size: 125%;
+  color: #f0ead1;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .usu,
 .informacoes {
-    margin: 10px;
-
+  margin: 10px;
 }
 
 .texto {
-    margin: 20px;
-    font-size: 120%;
+  margin: 20px;
+  font-size: 120%;
 }
 
 #cardapio {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 
-    font-family: Arial, Helvetica, sans-serif;
-
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#cardapio>h1 {
-    margin: 10px;
-    color: #0a1d29;
-    font-size: 275%;
-
+#cardapio > h1 {
+  margin: 10px;
+  color: #0a1d29;
+  font-size: 275%;
 }
 
 .categoria {
-    margin: 20px;
+  margin: 20px;
 }
 
-.categoria>div {
-    width: auto;
-    height: auto;
+.categoria > div {
+  width: auto;
+  height: auto;
 
-    max-width: calc(calc(150px + 20px) * 3);
+  max-width: calc(calc(150px + 20px) * 3);
 
-    background-color: #41848d;
+  background-color: #41848d;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.categoria>h2 {
-    text-align: center;
+.categoria > h2 {
+  text-align: center;
 
-    color: #0a1d29;
+  color: #0a1d29;
 
-    font-size: 150%;
+  font-size: 150%;
 
-    margin: 10px;
-
+  margin: 10px;
 }
 
 .comida {
-    width: 150px;
-    height: 200px;
+  width: 150px;
+  height: 200px;
 
-    margin: 10px;
+  margin: 10px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 
-    background-color: #f0ead1;
+  background-color: #f0ead1;
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    text-align: center;
+  text-align: center;
 
-    color: #0a1d29;
+  color: #0a1d29;
 
-    font-weight: bold;
-    
-
+  font-weight: bold;
 }
 
-.comida>* {
-    margin: 5px;
+.comida > * {
+  margin: 5px;
 }
 
 .imagemComida {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px
-
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 
 #escreverCritica {
-    width: 75%;
-    border: none;
-    border-bottom: solid 3px #41848d;
-    background-color: #0000;
-    color: #0a1d29;
-    margin: 20px;
-    position: relative;
+  width: 75%;
+  border: none;
+  border-bottom: solid 3px #41848d;
+  background-color: #0000;
+  color: #0a1d29;
+  margin: 20px;
+  position: relative;
 }
 
 #escreverCritica:focus {
-    outline: none;
-    border-bottom: solid 3px #1f4c53;
-    width: 80%;
+  outline: none;
+  border-bottom: solid 3px #1f4c53;
+  width: 80%;
 }
 
 #escreverCritica::placeholder {
-    color: #0a1d29;
-    font-size: 125%;
+  color: #0a1d29;
+  font-size: 125%;
 }
 
 #addCritica {
-    width: auto;
-    height: auto;
-    min-width: 100px;
-    min-height: 35px;
-    position: relative;
-    left: 175px;
-    border-radius: 30%;
-    border: none;
-    background-color: #f0ead1;
-    outline: none;
-    margin: 10px;
-    color: #0a1d29;
-    font-size: 115%;
+  width: auto;
+  height: auto;
+  min-width: 100px;
+  min-height: 35px;
+  position: relative;
+  left: 175px;
+  border-radius: 30%;
+  border: none;
+  background-color: #f0ead1;
+  outline: none;
+  margin: 10px;
+  color: #0a1d29;
+  font-size: 115%;
 }
 
 #addCritica:hover {
-    outline: solid 2px #0a1d29;
+  outline: solid 2px #0a1d29;
 }
 
 #notaCritica {
-    width: 45%;
-    border: none;
-    border-bottom: solid 3px #41848d;
-    background-color: #0000;
-    color: #0a1d29;
-    margin: 20px;
-    position: relative;
+  width: 45%;
+  border: none;
+  border-bottom: solid 3px #41848d;
+  background-color: #0000;
+  color: #0a1d29;
+  margin: 20px;
+  position: relative;
 }
 
 #notaCritica:focus {
-    outline: none;
-    border-bottom: solid 3px #1f4c53;
-    width: 60%;
+  outline: none;
+  border-bottom: solid 3px #1f4c53;
+  width: 60%;
 }
 
 #notaCritica::placeholder {
-    color: #0a1d29;
-    font-size: 125%;
+  color: #0a1d29;
+  font-size: 125%;
 }
