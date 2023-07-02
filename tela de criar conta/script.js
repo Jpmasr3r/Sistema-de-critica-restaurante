@@ -56,12 +56,14 @@ addConta.addEventListener("click",() => {
                         clientes.push(usuario);
                         clientes = JSON.stringify(clientes);
                         localStorage.setItem("clientes",clientes);
+                        localStorage.setItem("logado",clientes);
                         break;
     
                     case "critico":
                             criticos.push(usuario);
                             criticos = JSON.stringify(criticos);
                             localStorage.setItem("criticos",criticos);
+                            localStorage.setItem("logado",criticos);
                         break;
                 }
     

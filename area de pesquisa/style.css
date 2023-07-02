@@ -137,15 +137,14 @@ body > * {
     position: absolute;
     width: auto;
     height: auto;
-    min-width: 150px;
-    min-height: 50px;
+    min-width: 10vh;
+    min-height: 100vh;
     background-color: #f0ead1;
-    top: 35px;
     left: calc(100% - 10px);
     transform: translate(-100%);
     border-radius: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -170,8 +169,8 @@ body > * {
 
 #links > a {
     color: #41848d;
-    text-decoration: none;
     font-size: 125%;
+    text-decoration: none;
 }
 
 #links > a:hover {

@@ -22,64 +22,6 @@ if(!restaurantes) {
     restaurantes = JSON.parse(restaurantes)
 }
 
-// let clientes = [
-//     {
-//         nome: "Roberto Carlos",
-//         src: "../src/img/pessoas/pessoa1.png"
-//     },
-
-//     {
-//         nome: "Socrates",
-//         src: "../src/img/pessoas/pessoa2.png"
-//     },
-
-//     {
-//         nome: "Albert Einstein",
-//         src: "../src/img/pessoas/pessoa3.png"
-//     },
-    
-//     {
-//         nome: "Miguel",
-//         src: "../src/img/pessoas/pessoa7.png"
-//     }
-
-
-
-// ];
-
-// let criticos = [
-//     {
-//         nome: "Érick Jacquin",
-//         src: "../src/img/pessoas/pessoa4.png"
-//     },
-
-//     {
-//         nome: "Rato Ratatuile",
-//         src: "../src/img/pessoas/pessoa5.png"
-//     },
-    
-//     {
-//         nome: "James da Salada de Fruta",
-//         src: "../src/img/pessoas/pessoa6.png"
-//     }
-
-// ];
-
-// let restaurantes = [
-//     {
-//         nome: "Restaurante da Praia",
-//         nota: 2,
-//         src: "../src/img/restaurantes/restaurante1.png"
-//     },
-
-//     {
-//         nome: "Restaurante da Floresta",
-//         nota: 4,
-//         src: "../src/img/restaurantes/restaurante2.png"
-//     }
-
-// ];
-
 let tipo = document.getElementsByName("tipo");
 let buttonPes = document.querySelector("#buttonPes");
 let area = document.querySelector("#area");
