@@ -18,6 +18,7 @@ let nome = document.querySelector("#nome");
 let senha = document.querySelector("#senha");
 let email = document.querySelector("#email");
 let telefone = document.querySelector("#telefone");
+let foto = document.querySelector("#foto");
 
 let addConta = document.querySelector("#addConta");
 let tipoNode = document.getElementsByName("tipo");
@@ -42,14 +43,29 @@ addConta.addEventListener("click",() => {
         tipoNode.forEach(e => {
             if(e.checked) {
                 let tipo = e.value;
-                let usuario = {
-                    nome: nome.value,
-                    senha: senha.value,
-                    email: email.value,
-                    telefone: telefone.value,
-                    src: "../src/img/perfil.png",
-                    tipo: tipo,
+
+                let usuario;
+                if(foto.value == "") {
+                    usuario = {
+                        nome: nome.value,
+                        senha: senha.value,
+                        email: email.value,
+                        telefone: telefone.value,
+                        src: "../src/img/perfil.png",
+                        tipo: tipo,
+                    }
+                }else {
+                    usuario = {
+                        nome: nome.value,
+                        senha: senha.value,
+                        email: email.value,
+                        telefone: telefone.value,
+                        src: foto.value,
+                        tipo: tipo,
+                    }
                 }
+
+
     
                 switch(tipo) {
                     case "cliente":

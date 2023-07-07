@@ -57,13 +57,20 @@ buttonPes.addEventListener("click", () => {
 function printClientes() {
     if(clientes.length > 0) {
         clientes.forEach(e => {
-            area.insertAdjacentHTML("beforeend",`
-                <div class="link pessoa">
-                    <img src="${e.src}" alt="">
-                    <a href="../perfil cliente/index.html">${e.nome}</a>
-                    <span class="tipo">Cliente</span>
-                </div>
-            `)
+            const div = document.createElement('div');
+            div.classList.add('link', 'pessoa');
+            div.innerHTML = `
+                <img src="${e.src}" alt="">
+                <a href="../perfil cliente/index.html">${e.nome}</a>
+                <span class="tipo">Cliente</span>
+            `;
+            area.appendChild(div);
+
+            div.querySelector('a').addEventListener('click', () => {
+                localStorage.setItem("salvo_cliente",JSON.stringify(e));
+            })
+
+
         })
     }
 }
@@ -71,30 +78,42 @@ function printClientes() {
 function printCriticos() {
     if(criticos.length > 0) {
         criticos.forEach(e => {
-            area.insertAdjacentHTML("beforeend",`
-                <div class="link pessoa">
-                    <img src="${e.src}" alt="">
-                    <a href="../perfil cliente/index.html">${e.nome}</a>
-                    <span class="tipo">Critico</span>
-                </div>
-            `)
+            const div = document.createElement("div");
+            div.classList.add("link","pessoa");
+
+            div.innerHTML = `
+                <img src=${e.src} alt="">
+                <a href="../perfil cliente/index.html">${e.nome}</a>
+                <span class="tipo">Critico</span>
+            `   
+            area.appendChild(div);
+            div.querySelector("a").addEventListener("click",() => {
+                localStorage.setItem("salvo_critico",JSON.stringify(e));
+            })
+
         })
     }
 }
 
 function printRestaurantes() {
     restaurantes.forEach(e => {
-        area.insertAdjacentHTML("beforeend",`
-            <div class="link restaurante">
-                <img src="${e.src}" alt="">
-                <a href="../perfil restaurante/index.html">${e.nome}</a>
-                <div class="nota">
-                    ${addEstrelas(e)}
-                </div>
-                <span class="tipo">Restaurante</span>
+        const div = document.createElement("div");
+        div.classList.add("link","restaurante");
+
+        div.innerHTML = `
+            <img src=${e.src} alt="">
+            <a href="../perfil restaurante/index.html">${e.nome}</a>
+            <div class="nota">
+                ${addEstrelas(e)}
             </div>
-        
-        `)
+            <span class="tipo">Restaurante</span>
+        `
+
+        area.appendChild(div);
+
+        div.querySelector("a").addEventListener("click",() => {
+            localStorage.setItem("salvo_restaurante",JSON.stringify(e));
+        })
     })
 }
 
