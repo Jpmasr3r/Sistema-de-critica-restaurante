@@ -1,0 +1,123 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+#area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+}
+
+#inf {
+    /* Outros estilos que você já definiu */
+
+    /* Adicione estilos para o texto das informações do crítico */
+    font-size: 18px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+
+#inf h1 {
+    font-size: 24px;
+    color: #eb1e25;
+    margin-bottom: 10px;
+}
+
+.critica {
+    display: flex;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.perfilUsu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.informacoes {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Alinhamento à esquerda */
+}
+
+.criticoNome {
+    font-weight: bold;
+}
+
+.estrela {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.emoji {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #eb1e25;
+}
+
+.texto {
+    flex: 1;
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    /* Remova estas propriedades para permitir que o texto ocupe o espaço necessário */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+}
+
+
+#restaurantesVisi .restaurante {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.resNome {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que o nome do restaurante quebre a linha */
+    overflow: hidden; /* Esconde o texto que não cabe */
+    text-overflow: ellipsis; /* Mostra reticências (...) quando o texto é cortado */
+}
+
+.nota .emoji {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #eb1e25;
+}

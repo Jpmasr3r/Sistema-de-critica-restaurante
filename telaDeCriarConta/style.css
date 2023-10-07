@@ -1,0 +1,117 @@
+/* style.css */
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+#container1 {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px;
+}
+
+/* Estilos do cabeçalho */
+h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Estilos das etiquetas e campos de entrada */
+label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+}
+
+.textBoxs {
+  width: 95%;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: border-color 0.3s;
+}
+
+.textBoxs:focus {
+  border-color: #eb1e25;
+}
+
+/* Estilos dos botões */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#addConta {
+  background-color: #eb1e25;
+  color: #fff;
+}
+
+#addConta:hover {
+  background-color: #ff4b52;
+}
+
+#criarConta {
+  background-color: #fff;
+  border: 1px solid #eb1e25;
+  color: #eb1e25;
+}
+
+#criarConta:hover {
+  background-color: #eb1e25;
+  color: #fff;
+}
+
+/* Estilos para os radio buttons */
+.selecao {
+  display: none;
+}
+
+.selecao + b {
+  cursor: pointer;
+  padding-left: 25px;
+  position: relative;
+}
+
+.selecao + b:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #eb1e25;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.selecao:checked + b:before {
+  background-color: #eb1e25;
+  border-color: #eb1e25;
+}

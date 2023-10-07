@@ -1,0 +1,86 @@
+/* Defina uma fonte padrão e um fundo para todo o documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0; /* Remova margens padrão */
+    padding: 0; /* Remova preenchimento padrão */
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para o contêiner principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+/* Estilo para a área de pesquisa */
+#pesquisa {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 95%;
+    margin: 10px;
+}
+
+/* Estilo para o título */
+#pesquisa h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para a entrada de texto */
+#texto {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #eb1e25;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    width: 95%;
+    margin: 10px;
+}
+
+/* Estilize os botões de seleção */
+.selecao {
+    display: none;
+}
+
+.selecao + b {
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s ease-in-out;
+}
+
+.selecao:checked + b {
+    font-weight: bold;
+    color: #eb1e25;
+}
+
+/* Estilize os elementos de fundo */
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background-color: #eb1e25;
+    z-index: -1;
+}
+
+#bg1 {
+    left: 0;
+    top: 0;
+}
+
+#bg2 {
+    left: 100%;
+    top: 0;
+    transform: translateX(-100%);
+}

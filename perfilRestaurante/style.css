@@ -1,0 +1,213 @@
+body {
+  height: auto;
+  min-height: 90vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  margin: 0;
+  left: 0;
+  top: 0;
+  background-color: #eb1e25;
+}
+
+/* Estilos para as informações do restaurante */
+#infs {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  font-family: 'Helvetica', sans-serif; /* Fonte bonita de exemplo */
+  background-color: #f7f7f7; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+#infs h1 {
+  font-size: 28px;
+  color: #eb1e25; /* Cor do título */
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+label {
+  font-size: 18px;
+  color: #333; /* Cor do texto */
+  margin-top: 10px; /* Espaçamento superior */
+}
+
+label b {
+  font-weight: bold;
+}
+
+/* Estilos para as estrelas de nota (emojis) */
+#nota {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.emoji {
+  font-size: 24px; /* Tamanho do emoji */
+  margin-right: 5px; /* Espaçamento entre os emojis */
+}
+
+/* Estilos para o cardápio */
+#cardapio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+  font-family: 'Helvetica', sans-serif; /* Fonte bonita de exemplo */
+}
+
+.categoria {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #eb1e25;
+  font-family: 'Arial', sans-serif; /* Fonte bonita de exemplo */
+}
+
+.comida {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 10px 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+  font-family: 'Georgia', serif; /* Fonte bonita de exemplo */
+}
+
+.comida:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.imagemComida {
+  width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.nomeComida {
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Verdana', sans-serif; /* Fonte bonita de exemplo */
+}
+
+.descricaoComida {
+  margin-top: 5px;
+  font-style: italic;
+  color: #555;
+  font-family: 'Times New Roman', serif; /* Fonte bonita de exemplo */
+}
+
+.valorComida {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #eb1e25;
+  font-family: 'Tahoma', sans-serif; /* Fonte bonita de exemplo */
+}
+
+
+/* Estilos para o input de crítica (textarea) */
+#escreverCritica {
+  flex: 1;
+  width: 95%;
+  min-height: 100px; /* Altura mínima do textarea */
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical; /* Permite redimensionamento vertical */
+  overflow-y: auto; /* Adiciona barras de rolagem vertical se necessário */
+}
+
+#notaCritica {
+  width: 100px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#addCritica {
+  background-color: #eb1e25;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#addCritica:hover {
+  background-color: #c9131b;
+}
+
+/* Estilos para a seção de críticas */
+.critica {
+  display: flex;
+  margin-top: 20px; /* Espaçamento superior entre as críticas */
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+
+.usu {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.perfilUsu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #eb1e25; /* Cor do link */
+  font-weight: bold;
+}
+
+.informacoes {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 16px;
+  color: #666;
+}
+
+.estrela {
+  width: 20px; /* Tamanho das estrelas */
+  margin-right: 5px; /* Espaçamento entre as estrelas */
+}
+
+.texto {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  font-size: 18px;
+  color: #333; /* Cor do texto */
+}
