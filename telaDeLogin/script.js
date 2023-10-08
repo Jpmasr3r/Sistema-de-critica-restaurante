@@ -1,9 +1,14 @@
-let clientes = [];
-clientes = localStorage.getItem("clientes");
+let login = document.querySelector("#login");
+let criarConta = document.querySelector("#criarConta");
 
-let criticos = [];
-criticos = localStorage.getItem("criticos");
+login.addEventListener("click", () => {
+    location.href = "../areaDePesquisa/index.html"
+});
 
-let usuarios = clientes+criticos;
-usuarios = JSON.parse(usuarios);
+criarConta.addEventListener("click", () => {
+    location.href = "../telaDeCriarConta/index.html"
+});
+
+
+
 

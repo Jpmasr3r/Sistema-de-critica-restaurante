@@ -1,94 +1,78 @@
-// let clientes = [];
-// clientes = localStorage.getItem("clientes");
-// if(!clientes) {
-//     clientes = [];
-// }else {
-//     clientes = JSON.parse(clientes);
-// }
+let user = {
+    nome: "",
+    email: "",
+    telefone: "",
+    senha: "",
+    tipo: "",
+    foto: "",
+}
 
-// let criticos = [];
-// criticos = localStorage.getItem("criticos");
-// if(!criticos) {
-//     criticos = [];
-// }else {
-//     criticos = JSON.parse(criticos);
-// }
+let nome = document.querySelector("#nome");
+let email = document.querySelector("#email");
+let telefone = document.querySelector("#telefone");
+let senha = document.querySelector("#senha");
+let Vsenha = document.querySelector("#Vsenha");
+let selecao = document.querySelectorAll(".selecao");
+let foto = document.querySelector("#foto");
 
-// let nome = document.querySelector("#nome");
-// let senha = document.querySelector("#senha");
-// let email = document.querySelector("#email");
-// let telefone = document.querySelector("#telefone");
-// let foto = document.querySelector("#foto");
+let erroTexto = document.querySelector("#erroTexto");
+let erroSenha = document.querySelector("#erroSenha");
 
-// let addConta = document.querySelector("#addConta");
-// let tipoNode = document.getElementsByName("tipo");
+let logar = document.querySelector("#logar");
+logar.addEventListener("click", () => {
+    location.href = "../telaDeLogin/index.html";
+})
 
-// let showPassword = document.querySelector("#showPassword");
-// let show = false;
+let addConta = document.querySelector("#addConta");
+addConta.addEventListener("click", () => {
+    if (nome.value != "" &&
+        email.value != "" &&
+        telefone.value != "" &&
+        senha.value != "" &&
+        Vsenha.value != "" &&
+        (selecao[0].checked || selecao[1].checked) &&
+        foto.value != "") {
 
-// showPassword.addEventListener("click",() => {
-//     if(show) {
-//         show = false;
-//         showPassword.querySelector("img").src = "../src/img/notShow.png";
-//         senha.setAttribute("type","password")
-//     }else {
-//         show = true;
-//         showPassword.querySelector("img").src = "../src/img/show.png";
-//         senha.setAttribute("type","text")
-//     }
-// })
+        erroTexto.style.display = "none";
 
-// addConta.addEventListener("click",() => {
-//     if(nome.value.length > 0 && senha.value.length > 0 && email.value.length > 0 && telefone.value.length > 0) {
-//         tipoNode.forEach(e => {
-//             if(e.checked) {
-//                 let tipo = e.value;
+        if (senha.value == Vsenha.value) {
+            erroSenha.style.display = "none";
 
-//                 let usuario;
-//                 if(foto.value == "") {
-//                     usuario = {
-//                         nome: nome.value,
-//                         senha: senha.value,
-//                         email: email.value,
-//                         telefone: telefone.value,
-//                         src: "../src/img/perfil.png",
-//                         tipo: tipo,
-//                     }
-//                 }else {
-//                     usuario = {
-//                         nome: nome.value,
-//                         senha: senha.value,
-//                         email: email.value,
-//                         telefone: telefone.value,
-//                         src: foto.value,
-//                         tipo: tipo,
-//                     }
-//                 }
+            user.nome = nome.value;
+            user.email = email.value;
+            user.telefone = telefone.value;
+            user.senha = senha.value;
+            selecao.forEach((e) => {
+                if (e.checked) {
+                    user.tipo = e.value
+                }
+            })
+
+            user.foto = foto.value;
+
+            let query = new URLSearchParams(user).toString();
+            let url = `add.php?${query}`;
+
+            add(url);
+            
+            // location.href = "../telaDeLogin/index.html";
+        } else {
+            erroSenha.style.display = "inherit";
+        }
 
 
-    
-//                 switch(tipo) {
-//                     case "cliente":
-//                         clientes.push(usuario);
-//                         clientes = JSON.stringify(clientes);
-//                         localStorage.setItem("clientes",clientes);
-//                         localStorage.setItem("logado",clientes);
-//                         break;
-    
-//                     case "critico":
-//                             criticos.push(usuario);
-//                             criticos = JSON.stringify(criticos);
-//                             localStorage.setItem("criticos",criticos);
-//                             localStorage.setItem("logado",criticos);
-//                         break;
-//                 }
-    
-                
-                
-    
-//             }
-//         })
-        
-//     }
-    
-// })
+
+    } else {
+        erroTexto.style.display = "inherit";
+    }
+})
+
+async function add(url) {
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+}
+
+
+
+

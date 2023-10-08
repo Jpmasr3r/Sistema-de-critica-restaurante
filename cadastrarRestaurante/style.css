@@ -1,0 +1,64 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Restante do CSS aqui */
+
+input[type="text"] {
+    padding: 12px; /* Aumentei o tamanho do padding */
+    margin-top: 10px;
+    border: 2px solid #ccc; /* Aumentei a largura da borda */
+    border-radius: 5px;
+    font-size: 16px; /* Tamanho da fonte ligeiramente menor */
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-color: #eb1e25; /* Cor da borda quando em foco */
+}
+
+/* Restante do CSS aqui */
+
+button {
+    background-color: #eb1e25;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px; /* Aumentei o espaçamento interno do botão */
+    margin-top: 20px; /* Maior espaçamento superior */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 18px; /* Aumentei o tamanho da fonte */
+}
+
+button:hover {
+    background-color: #c9131b;
+}

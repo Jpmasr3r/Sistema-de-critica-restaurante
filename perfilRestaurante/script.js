@@ -5,6 +5,11 @@ let nota = document.querySelector("#notaCritica");
 let data = new Date();
 let notaValue = 0;
 
+let carrinhoButton = document.querySelector("#carrinhoButton");
+carrinhoButton.addEventListener("click",() => {
+    location.href = "../carrinho/index.html";
+});
+
 buttonPes.addEventListener("click", () => {
   if (nota.value != "") {
     notaValue = nota.value;

@@ -1,23 +1,24 @@
-/* Defina uma fonte padrão e um fundo para todo o documento */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0; /* Remova margens padrão */
-    padding: 0; /* Remova preenchimento padrão */
-    display: flex;
-    justify-content: center;
+/* Aplicar a fonte "Montserrat" a todos os elementos */
+* {
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilo para o contêiner principal */
-.container {
+/* Estilo geral */
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ocupa toda a altura da tela */
+    font-family: 'Montserrat', sans-serif; /* Aplicar a fonte também ao corpo */
 }
 
-/* Estilo para a área de pesquisa */
+/* Restante do seu CSS... */
+
+
+/* Estilo para a barra de pesquisa no topo */
 #pesquisa {
     background-color: #fff;
     padding: 20px;
@@ -25,19 +26,18 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 95%;
-    margin: 10px;
+    margin: 10px auto;
 }
 
-/* Estilo para o título */
+/* Estilo para o título da barra de pesquisa */
 #pesquisa h1 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Estilo para a entrada de texto */
+/* Estilo para a entrada de texto na barra de pesquisa */
 #texto {
-    width: 100%;
     padding: 10px;
     border: 2px solid #eb1e25;
     border-radius: 4px;
@@ -83,4 +83,88 @@ body {
     left: 100%;
     top: 0;
     transform: translateX(-100%);
+}
+
+/* Estilo para a área de pesquisa abaixo da barra */
+#area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+/* Estilo para os elementos filhos dentro de #area */
+.link {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    max-width: 150px;
+    transition: box-shadow 0.3s ease-in-out; /* Adicionamos uma transição suave para o efeito de hover */
+}
+
+.link img {
+    width: 100%;
+}
+
+.link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.link .tipo {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilo de hover para os elementos de pesquisa */
+.link:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Aumentamos a intensidade da sombra no hover */
+    background-color: #f8f8f8; /* Alteramos a cor de fundo sutilmente no hover */
+}
+
+
+/* Estilo para a div do círculo vermelho */
+#carrinhoButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #eb1e25; /* Cor do círculo vermelho */
+    border-radius: 50%;
+    width: 70px; /* Ajuste o tamanho do círculo conforme necessário */
+    height: 70px; /* Ajuste o tamanho do círculo conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out; /* Efeito de transição de cor */
+}
+
+/* Efeito de hover para o botão de carrinho */
+#carrinhoButton:hover {
+    background-color: #c90c17; /* Cor diferente no hover */
+}
+
+/* Estilo para a imagem do carrinho (mudando a cor para branca) */
+#carrinhoButton img {
+    width: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+    height: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+    fill: white; /* Define a cor do preenchimento da imagem como branca */
+    user-select: none; /* Impede a seleção da imagem */
+    pointer-events: none; /* Impede eventos de ponteiro na imagem */
+}
+
+
+/* Efeito de clique para o botão de carrinho */
+#carrinhoButton:active {
+    transform: scale(0.9); /* Reduz a escala ao clicar para dar um efeito de clique */
 }

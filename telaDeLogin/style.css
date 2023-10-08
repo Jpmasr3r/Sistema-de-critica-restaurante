@@ -76,11 +76,12 @@ button:hover {
   color: #eb1e25;
   font-weight: bold;
   margin: 20px;
+  display: none;
 }
 
 /* Estilos para os ícones */
 img {
   vertical-align: middle;
-  max-width: 20px; /* Define a largura máxima das imagens */
-  margin-right: 10px; /* Adiciona um espaço à direita das imagens */
+  max-width: 20px;
+  margin-right: 10px;
 }

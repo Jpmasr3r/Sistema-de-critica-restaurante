@@ -1,5 +1,3 @@
-/* style.css */
-
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
@@ -76,13 +74,13 @@ button {
   background-color: #ff4b52;
 }
 
-#criarConta {
+#logar {
   background-color: #fff;
   border: 1px solid #eb1e25;
   color: #eb1e25;
 }
 
-#criarConta:hover {
+#logar:hover {
   background-color: #eb1e25;
   color: #fff;
 }
@@ -96,22 +94,33 @@ button {
   cursor: pointer;
   padding-left: 25px;
   position: relative;
+  transition: color 0.3s;
 }
 
-.selecao + b:before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border: 2px solid #eb1e25;
-  border-radius: 50%;
-  background-color: transparent;
+.selecao:checked + b::before {
+  content: "✔"; /* Símbolo de verificação para representar a seleção */
+  color: #eb1e25; /* Cor do símbolo quando selecionado */
   position: absolute;
   left: 0;
-  top: 1px;
-  transition: background-color 0.3s, border-color 0.3s;
+  top: 0;
+  font-size: 18px; /* Tamanho do símbolo */
 }
 
-.selecao:checked + b:before {
-  background-color: #eb1e25;
-  border-color: #eb1e25;
+.selecao:checked + b {
+  color: #eb1e25; /* Cor do texto quando selecionado */
+}
+
+/* Estilos para o texto de erro */
+#erroTexto {
+  color: #eb1e25;
+  font-weight: bold;
+  margin: 20px;
+  display: none;
+}
+
+#erroSenha {
+  color: #eb1e25;
+  font-weight: bold;
+  margin: 20px;
+  display: none;
 }
