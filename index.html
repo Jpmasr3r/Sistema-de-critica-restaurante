@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async>
-        location.href = "../telaDeLogin/index.html";
+        let user = localStorage.getItem("logado");
+        async function link() {
+            if (!user) {
+                location.href = "../telaDeLogin/index.html";
+            } else {
+                location.href = "../areaDePesquisa/index.html"
+            }
+
+        }
+
+        link();
     </script>
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

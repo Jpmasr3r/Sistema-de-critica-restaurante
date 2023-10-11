@@ -50,12 +50,25 @@ addConta.addEventListener("click", () => {
 
             user.foto = foto.value;
 
-            let query = new URLSearchParams(user).toString();
-            let url = `add.php?${query}`;
+            let allUsers = [];
+            allUsers = localStorage.getItem("allUsers");
+            if(!allUsers) {
+                allUsers = [];
+            }else {
+                allUsers = JSON.parse(allUsers);
+            }
 
-            add(url);
+            allUsers[allUsers.length] = user;
             
-            // location.href = "../telaDeLogin/index.html";
+            localStorage.setItem("allUsers",JSON.stringify(allUsers));
+            location.href = "../telaDeLogin/index.html";
+            
+
+
+            // let query = new URLSearchParams(user).toString();
+            // let url = `add.php?${query}`;
+            // add(url);
+
         } else {
             erroSenha.style.display = "inherit";
         }
@@ -67,11 +80,11 @@ addConta.addEventListener("click", () => {
     }
 })
 
-async function add(url) {
-    let res = await fetch(url);
-    let data = await res.json();
-    console.log(data);
-}
+// async function add(url) {
+//     let res = await fetch(url);
+//     let data = await res.json();
+//     console.log(data);
+// }
 
 
 
