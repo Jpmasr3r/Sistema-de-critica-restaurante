@@ -5,6 +5,7 @@ let user = {
     senha: "",
     tipo: "",
     foto: "",
+    criticas: [],
 }
 
 let nome = document.querySelector("#nome");
@@ -52,17 +53,17 @@ addConta.addEventListener("click", () => {
 
             let allUsers = [];
             allUsers = localStorage.getItem("allUsers");
-            if(!allUsers) {
+            if (!allUsers) {
                 allUsers = [];
-            }else {
+            } else {
                 allUsers = JSON.parse(allUsers);
             }
 
-            allUsers[allUsers.length] = user;
-            
-            localStorage.setItem("allUsers",JSON.stringify(allUsers));
+            allUsers.push(user);
+
+            localStorage.setItem("allUsers", JSON.stringify(allUsers));
             location.href = "../telaDeLogin/index.html";
-            
+
 
 
             // let query = new URLSearchParams(user).toString();

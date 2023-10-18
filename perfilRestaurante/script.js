@@ -1,73 +1,70 @@
-let area = document.querySelector("#areaCriticas");
-let buttonPes = document.querySelector("#addCritica");
-let critica = document.querySelector("#escreverCritica");
-let nota = document.querySelector("#notaCritica");
-let data = new Date();
-let notaValue = 0;
-
-let carrinhoButton = document.querySelector("#carrinhoButton");
-carrinhoButton.addEventListener("click",() => {
-    location.href = "../carrinho/index.html";
+let voltar = document.querySelector("#voltar");
+voltar.addEventListener("click", () => {
+	location.href = "../areaDePesquisa/index.html";
+	localStorage.removeItem("selectedRestaurante");
 });
 
-buttonPes.addEventListener("click", () => {
-  if (nota.value != "") {
-    notaValue = nota.value;
-  }
+let selectedRestaurante = JSON.parse(localStorage.getItem("selectedRestaurante"));
+let logado = JSON.parse(localStorage.getItem("logado"));
+let nome = document.querySelector("#nome");
+let endereco = document.querySelector("#endereco");
+let dono = document.querySelector("#dono");
+let nota = document.querySelector("#nota");
+let admButton = document.querySelectorAll(".adm");
 
-  if (notaValue >= 5) {
-    notaValue = 5;
-  }
+buttonsADM();
 
-  if (critica.value != "") {
-    addCritica();
-  }
+nome.innerHTML = selectedRestaurante.nome;
+endereco.innerHTML = selectedRestaurante.endereco;
+if(selectedRestaurante.dono.email == logado.email) {
+	dono.innerHTML = `${selectedRestaurante.dono.nome} (Você)`;
+}else {
+	dono.innerHTML = selectedRestaurante.dono.nome;
+}
+
+dono.addEventListener("click", () => {
+	localStorage.setItem("selectedPerfil", JSON.stringify(selectedRestaurante.dono));
+	location.href = "../perfil/index.html";
 });
 
-function addCritica() {
-  area.insertAdjacentHTML(
-    "beforeend",
-    `
-        <div class="critica">
-            <div class="usu">
-                <img src="../src/img/perfil.png" alt="" class="perfilUsu">
-                <a href="../perfil cliente/index.html">Você</a>
-            </div>
+for (let i = 1; i <= selectedRestaurante.nota; i++) {
+	const spanEmoji = document.createElement("span");
+	spanEmoji.classList.add("emoji");
+	spanEmoji.innerHTML = "⭐️";
 
-            <div class="informacoes">
-                <span>${notaValue}</span>
-                ${addEstrelas()}
-                <span>${
-                  data.getDate() +
-                  "/" +
-                  (data.getMonth() + 1) +
-                  "/" +
-                  data.getFullYear()
-                }</span>
-                
-            </div>
-
-            <div class="texto">
-                <span>${critica.value}</span>
-            </div>
-
-        </div>
-    
-    `
-  );
+	nota.appendChild(spanEmoji);
 }
 
-function addEstrelas() {
-  let estrelasAtivas = "";
-  let estrelasInativas = "";
+for (let i = 1; i <= 5 - selectedRestaurante.nota; i++) {
+	const spanEmoji = document.createElement("span");
+	spanEmoji.classList.add("emoji");
+	spanEmoji.classList.add("desativado");
+	spanEmoji.innerHTML = "⭐️";
 
-  for (i = 1; i <= notaValue; i++) {
-    estrelasAtivas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">\n`;
-  }
-
-  for (i = 1; i <= 5 - notaValue; i++) {
-    estrelasInativas += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">\n`;
-  }
-
-  return estrelasAtivas + estrelasInativas;
+	nota.appendChild(spanEmoji);
 }
+
+function buttonsADM() {
+	if (selectedRestaurante.dono.email == logado.email) {
+		if(selectedRestaurante.categoria.length <= 0) {
+			admButton[1].style.display = "none";
+			admButton[2].style.display = "none";
+			admButton[3].style.display = "none";
+		}else {
+			admButton[2].style.display = "none";
+			admButton[3].style.display = "none";
+		}
+		
+	} else {
+		admButton.forEach((e) => {
+			e.style.display = "none";
+		});
+	}
+
+
+}	
+
+
+
+
+

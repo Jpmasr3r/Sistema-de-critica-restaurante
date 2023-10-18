@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="script.js" async></script>
     <title>Pesquisar</title>
 </head>
@@ -15,7 +16,7 @@
         <input type="text" placeholder="Escreva o nome do restaurante, pessoa ou critico" id="texto">
 
         <div>
-            <label><input type="radio" id="nenhumOp" name="tipo" value="nenhum" class="selecao">
+            <label><input checked="true" type="radio" id="nenhumOp" name="tipo" value="nenhum" class="selecao">
                 <b>Todos</b></label>
 
             <label><input type="radio" id="restauranteOp" name="tipo" value="restaurante" class="selecao">
@@ -62,6 +63,9 @@
         <!-- Imagem do carrinho preto -->
         <img src="../src/img/carrinhoCompras.png" alt="Carrinho de Compras">
     </div>
+    <button id="logout">Logout</button>
+
+
 </body>
 
 </html>

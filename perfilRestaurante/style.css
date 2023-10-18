@@ -187,7 +187,7 @@ label b {
   margin-right: 10px;
 }
 
-a {
+a, #dono {
   text-decoration: none;
   color: #eb1e25; /* Cor do link */
   font-weight: bold;
@@ -248,3 +248,86 @@ a {
 #carrinhoButton:active {
   transform: scale(0.9); /* Reduz a escala ao clicar para dar um efeito de clique */
 }
+
+/* Estilo para o botão "Logout" */
+#voltar {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: #eb1e25;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Efeito de hover para o botão "Logout" */
+#voltar:hover {
+  background-color: #c90c17;
+}
+
+.desativado {
+  filter: grayscale(100%);
+}
+
+
+.add {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  background-color: #eb1e25;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+  max-width: 35%;
+  max-height: 25%;
+  margin-top: 10px;
+}
+
+.add:hover {
+  background-color: #c90c17;
+}
+
+.remove {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  background-color: #fff;
+  color: #eb1e25;
+  padding: 10px 20px;
+  border: 2px solid #eb1e25;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+  max-width: 35%;
+  max-height: 25%;
+  margin-top: 10px;
+}
+
+.remove:hover {
+  border-color: #c90c17;
+  color: #c90c17;
+}
+
+/* #flutuante {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+
+} */

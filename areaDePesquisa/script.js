@@ -1,123 +1,200 @@
 let carrinhoButton = document.querySelector("#carrinhoButton");
-carrinhoButton.addEventListener("click",() => {
+carrinhoButton.addEventListener("click", () => {
     location.href = "../carrinho/index.html";
 });
 
+let logout = document.querySelector("#logout");
+logout.addEventListener("click", () => {
+    localStorage.removeItem("logado");
+    location.href = "..//index.html"
+})
 
+let allUsers = [];
+allUsers = localStorage.getItem("allUsers");
+if (!allUsers) {
+    allUsers = [];
+} else {
+    allUsers = JSON.parse(allUsers)
+}
 
-// let clientes = [];
-// clientes = localStorage.getItem("clientes");
-// if(!clientes) {
-//     clientes = [];
-// }else {
-//     clientes = JSON.parse(clientes)
-// }
+let allRestaurantes = [];
+allRestaurantes = localStorage.getItem("allRestaurantes");
+if (!allRestaurantes) {
+    allRestaurantes = [];
+} else {
+    allRestaurantes = JSON.parse(allRestaurantes)
+}
 
-// let criticos = [];
-// criticos = localStorage.getItem("criticos");
-// if(!criticos) {
-//     criticos = [];
-// }else {
-//     criticos = JSON.parse(criticos)
-// }
+let logado = JSON.parse(localStorage.getItem("logado"));
+let tipo = document.querySelectorAll(".selecao");
+let buttonPes = document.querySelector("#buttonPes");
+let area = document.querySelector("#area");
+let texto = document.querySelector("#texto");
 
-// let restaurantes = [];
-// restaurantes = localStorage.getItem("restaurantes");
-// if(!restaurantes) {
-//     restaurantes = [];
-// }else {
-//     restaurantes = JSON.parse(restaurantes)
-// }
+printTodos();
 
-// let tipo = document.getElementsByName("tipo");
-// let buttonPes = document.querySelector("#buttonPes");
-// let area = document.querySelector("#area");
+texto.addEventListener("input", () => {
+    tipo.forEach(e => {
+        if (e.checked) {
+            switch (e.value) {
+                case "nenhum":
+                    area.innerHTML = "";
+                    printTodos()
+                    break;
 
-// printTodos();
+                case "restaurante":
+                    area.innerHTML = "";
+                    printRestaurantes()
+                    break;
 
-// buttonPes.addEventListener("click", () => {
-//     area.innerHTML = "";
+                case "cliente":
+                    area.innerHTML = "";
+                    printAllUsers("cliente")
+                    break;
 
-//     tipo.forEach(e => { 
-//         if(e.checked) {
-//             switch(e.value){
-//                 case "nenhum":
-//                     printTodos()
-//                     break;
-        
-//                 case "restaurante":
-//                     printRestaurantes()
-//                     break;
-        
-//                 case "cliente":
-//                     printClientes()
-//                     break;
-        
-//                 case "critico":
-//                     printCriticos()
-//                     break;
-//             }
-//         }
-//     })
-// })
+                case "critico":
+                    area.innerHTML = "";
+                    printAllUsers("critico")
+                    break;
+            }
+        }
+    })
+})
 
-// function printClientes() {
-//     if(clientes.length > 0) {
-//         clientes.forEach(e => {
-//             const div = document.createElement('div');
-//             div.classList.add('link', 'pessoa');
-//             div.innerHTML = `
-//                 <img src="${e.src}" alt="">
-//                 <a href="../perfil cliente/index.html">${e.nome}</a>
-//                 <span class="tipo">Cliente</span>
-//             `;
-//             area.appendChild(div);
+tipo.forEach(e => {
+    e.addEventListener("click", () => {
+        if (e.checked) {
+            switch (e.value) {
+                case "nenhum":
+                    area.innerHTML = "";
+                    printTodos()
+                    break;
 
-//             div.querySelector('a').addEventListener('click', () => {
-//                 localStorage.setItem("salvo_cliente",JSON.stringify(e));
-//             })
+                case "restaurante":
+                    area.innerHTML = "";
+                    printRestaurantes()
+                    break;
 
+                case "cliente":
+                    area.innerHTML = "";
+                    printAllUsers("cliente")
+                    break;
 
-//         })
-//     }
-// }
+                case "critico":
+                    area.innerHTML = "";
+                    printAllUsers("critico")
+                    break;
+            }
+        }
+    })
+})
 
-// function printRestaurantes() {
-//     restaurantes.forEach(e => {
-//         const div = document.createElement("div");
-//         div.classList.add("link","restaurante");
+function printAllUsers(tipo) {
+    allUsers.forEach(e => {
+        if (e.nome.toLowerCase().includes(texto.value.toLowerCase())) {
+            const div = document.createElement('div');
+            div.classList.add("link");
+            div.classList.add("pessoa");
 
-//         div.innerHTML = `
-//             <img src=${e.src} alt="">
-//             <a href="../perfil restaurante/index.html">${e.nome}</a>
-//             <div class="nota">
-//                 ${addEstrelas(e)}
-//             </div>
-//             <span class="tipo">Restaurante</span>
-//         `
+            const img = document.createElement('img');
+            img.src = e.foto;
 
-//         area.appendChild(div);
+            const a = document.createElement('a');
+            a.href = "../perfil/index.html";
+            if(e.email == logado.email) {
+                a.innerHTML = `${e.nome} (Você)`;
+            }else {
+                a.innerHTML = e.nome;
+            }
 
-//         div.querySelector("a").addEventListener("click",() => {
-//             localStorage.setItem("salvo_restaurante",JSON.stringify(e));
-//         })
-//     })
-// }
+            const span = document.createElement('span');
+            span.classList.add("tipo");
+            span.innerHTML = e.tipo;
 
-// function addEstrelas(e) {
-//     let estrelas = "";
-//     for(let i = 1;i <= e.nota;i++) {
-//         estrelas += `<img src="../src/img/estrelaAtiva.png" alt="" class="estrela">`;
-//     }
-//     for(let i = 1; i <= (5 - e.nota);i++) {
-//         estrelas += `<img src="../src/img/estrelaInativa.png" alt="" class="estrela">`;
-//     }
-//     return estrelas;
-// }
+            div.appendChild(img);
+            div.appendChild(a);
+            div.appendChild(span);
 
-// function printTodos() {
-//     area.innerHTML = "";
-//     printClientes();
-//     printRestaurantes();
-//     printCriticos();
-// }
+            a.addEventListener("click", () => {
+                localStorage.setItem("selectedPerfil", JSON.stringify(e));
+            })
+
+            if (tipo == "todos") {
+                area.appendChild(div);
+            } else {
+                if (tipo == "cliente") {
+                    if (e.tipo == "cliente") {
+                        area.appendChild(div);
+                    }
+                }
+
+                if (tipo == "critico") {
+                    if (e.tipo == "critico") {
+                        area.appendChild(div);
+                    }
+                }
+            }
+        }
+    })
+}
+
+function printRestaurantes() {
+    allRestaurantes.forEach(e => {
+        if (e.nome.toLowerCase().includes(texto.value.toLowerCase())) {
+            const div = document.createElement("div");
+            div.classList.add("link");
+            div.classList.add("restaurante");
+
+            const img = document.createElement("img");
+            img.src = e.foto;
+
+            const a = document.createElement("a");
+            a.href = "../perfilRestaurante/index.html";
+            a.innerHTML = e.nome;
+
+            const divNota = document.createElement("divNota");
+            divNota.classList.add("nota");
+
+            for (let i = 1; i <= e.nota; i++) {
+                const spanEmoji = document.createElement("span");
+                spanEmoji.classList.add("emoji");
+                spanEmoji.innerHTML = "⭐️";
+
+                divNota.appendChild(spanEmoji);
+            }
+
+            for (let i = 1; i <= 5 - e.nota; i++) {
+                const spanEmoji = document.createElement("span");
+                spanEmoji.classList.add("emoji");
+                spanEmoji.classList.add("desativado");
+                spanEmoji.innerHTML = "⭐️";
+
+                divNota.appendChild(spanEmoji);
+            }
+
+            const br = document.createElement("br");
+
+            const span = document.createElement("span");
+            span.classList.add("tipo");
+            span.innerHTML = "Restaurante";
+
+            div.appendChild(img);
+            div.appendChild(a);
+            div.appendChild(divNota);
+            div.appendChild(br);
+            div.appendChild(span);
+            area.appendChild(div);
+
+            div.addEventListener("click", () => {
+                localStorage.setItem("selectedRestaurante", JSON.stringify(e));
+            });
+        }
+
+    })
+}
+
+function printTodos() {
+    area.innerHTML = "";
+    printAllUsers("todos");
+    printRestaurantes();
+}

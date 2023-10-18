@@ -16,22 +16,26 @@
         <div id="infs">
             <h1>Informações</h1>
 
-            <label>Nome: <b>nome</b></label>
-            <label>Endereço: <b>endereço</b></label>
-            <label>Dono: <b>dono</b></label>
+            <label>Nome: <b id="nome">nome</b></label>
+            <label>Endereço: <b id="endereco">endereço</b></label>
+            <label>Dono: <b id="dono">dono</b></label>
 
             <div id="nota">
                 <label>Nota:</label>
+                <!-- <label class="emoji">⭐️</label>
                 <label class="emoji">⭐️</label>
                 <label class="emoji">⭐️</label>
                 <label class="emoji">⭐️</label>
-                <label class="emoji">⭐️</label>
-                <label class="emoji">⭐️</label>
+                <label class="emoji">⭐️</label> -->
             </div>
         </div>
 
 
         <div id="cardapio">
+            <button id="addCategoria" class="add adm" >Add Categoria</button>
+            <button id="removeCategoria" class="remove adm" >Remove Categoria</button>
+            <button id="addComida" class="add adm" >Add Comida</button>
+            <button id="removeComida" class="remove adm" >Remove Comida</button>
             <h1>Cardapio:</h1>
 
             <!-- <div class="categoria">
@@ -82,7 +86,7 @@
 
         <div id="areaCriticas">
             <textarea id="escreverCritica" placeholder="Fazer crítica"></textarea>
-            <input type="number" id="notaCritica" placeholder="Nota">
+            <input type="number" id="notaCritica" placeholder="Nota" max="5" min="0">
             <button id="addCritica">Postar Crítica</button>
             <h1>Criticas ao Restaurante</h1>
 
@@ -124,9 +128,14 @@
 
     </div>
     <div id="carrinhoButton">
-        <!-- Imagem do carrinho preto -->
         <img src="../src/img/carrinhoCompras.png" alt="Carrinho de Compras">
     </div>
+    <button id="voltar">Voltar</button>
+
+    <!-- <div id="flutuante">
+
+    </div> -->
+
 
 </body>
 

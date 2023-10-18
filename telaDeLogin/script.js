@@ -6,15 +6,19 @@ criarConta.addEventListener("click", () => {
     location.href = "../telaDeCriarConta/index.html"
 });
 
-let allUsers = [];
-allUsers = JSON.parse(localStorage.getItem("allUsers"));
+let allUsers = localStorage.getItem("allUsers");
+if(!allUsers) {
+    allUsers = [];
+}else {
+    allUsers = JSON.parse(allUsers);
+}
 let email = document.querySelector("#email");
 let senha = document.querySelector("#senha");
 let erroTexto = document.querySelector("#erroTexto");
 
 login.addEventListener("click", () => {
-    let loginSucesso = false;
     allUsers.forEach(e => {
+        let loginSucesso = false;
         if (!loginSucesso) {
             erroTexto.style.display = "inherit";
         }
