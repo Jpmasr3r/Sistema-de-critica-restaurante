@@ -11,14 +11,15 @@ let endereco = document.querySelector("#endereco");
 let dono = document.querySelector("#dono");
 let nota = document.querySelector("#nota");
 let admButton = document.querySelectorAll(".adm");
+let flutuantes = document.querySelectorAll(".flutuante");
 
 buttonsADM();
 
 nome.innerHTML = selectedRestaurante.nome;
 endereco.innerHTML = selectedRestaurante.endereco;
-if(selectedRestaurante.dono.email == logado.email) {
+if (selectedRestaurante.dono.email == logado.email) {
 	dono.innerHTML = `${selectedRestaurante.dono.nome} (Você)`;
-}else {
+} else {
 	dono.innerHTML = selectedRestaurante.dono.nome;
 }
 
@@ -46,15 +47,25 @@ for (let i = 1; i <= 5 - selectedRestaurante.nota; i++) {
 
 function buttonsADM() {
 	if (selectedRestaurante.dono.email == logado.email) {
-		if(selectedRestaurante.categoria.length <= 0) {
+		if (selectedRestaurante.categoria.length <= 0) {
 			admButton[1].style.display = "none";
 			admButton[2].style.display = "none";
 			admButton[3].style.display = "none";
-		}else {
+		} else {
 			admButton[2].style.display = "none";
 			admButton[3].style.display = "none";
 		}
-		
+
+		admButton[0].addEventListener("click", () => {
+			flutuantes[0].style.display = "flex";
+		});
+
+		flutuantes.forEach(e => {
+			console.log(e)
+			e.querySelector(".closeWindow").addEventListener("click", () => {
+				e.style.display = "none";
+			})
+		})
 	} else {
 		admButton.forEach((e) => {
 			e.style.display = "none";
@@ -62,7 +73,8 @@ function buttonsADM() {
 	}
 
 
-}	
+}
+
 
 
 

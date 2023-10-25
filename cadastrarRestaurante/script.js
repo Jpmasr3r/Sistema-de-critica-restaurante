@@ -3,6 +3,11 @@ let enderecoRestaurante = document.querySelector("#enderecoRestaurante");
 let fotoRestaurante = document.querySelector("#fotoRestaurante");
 let submit = document.querySelector("#submit");
 
+let voltar = document.querySelector("#voltar");
+voltar.addEventListener("click",() => {
+    location.href = "../perfil/index.html";
+})
+
 let logado = localStorage.getItem("logado");
 if (!logado) {
     logado = "";
@@ -61,6 +66,7 @@ submit.addEventListener("click", () => {
         console.log(restaurante);
         allRestaurantes.push(restaurante);
         localStorage.setItem("allRestaurantes", JSON.stringify(allRestaurantes));
+        location.href = "../areaDePesquisa/index.html";
 
     } else {
         console.log("erro");

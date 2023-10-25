@@ -22,23 +22,32 @@ body {
   display: flex;
   flex-direction: column;
   width: 95%;
-  font-family: 'Helvetica', sans-serif; /* Fonte bonita de exemplo */
-  background-color: #f7f7f7; /* Cor de fundo */
-  padding: 20px; /* Espaçamento interno */
-  border-radius: 10px; /* Borda arredondada */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  font-family: 'Helvetica', sans-serif;
+  /* Fonte bonita de exemplo */
+  background-color: #f7f7f7;
+  /* Cor de fundo */
+  padding: 20px;
+  /* Espaçamento interno */
+  border-radius: 10px;
+  /* Borda arredondada */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra */
 }
 
 #infs h1 {
   font-size: 28px;
-  color: #eb1e25; /* Cor do título */
-  margin-bottom: 10px; /* Espaçamento inferior */
+  color: #eb1e25;
+  /* Cor do título */
+  margin-bottom: 10px;
+  /* Espaçamento inferior */
 }
 
 label {
   font-size: 18px;
-  color: #333; /* Cor do texto */
-  margin-top: 10px; /* Espaçamento superior */
+  color: #333;
+  /* Cor do texto */
+  margin-top: 10px;
+  /* Espaçamento superior */
 }
 
 label b {
@@ -53,8 +62,10 @@ label b {
 }
 
 .emoji {
-  font-size: 24px; /* Tamanho do emoji */
-  margin-right: 5px; /* Espaçamento entre os emojis */
+  font-size: 24px;
+  /* Tamanho do emoji */
+  margin-right: 5px;
+  /* Espaçamento entre os emojis */
 }
 
 /* Estilos para o cardápio */
@@ -63,7 +74,8 @@ label b {
   flex-direction: column;
   width: 100%;
   margin: 10px;
-  font-family: 'Helvetica', sans-serif; /* Fonte bonita de exemplo */
+  font-family: 'Helvetica', sans-serif;
+  /* Fonte bonita de exemplo */
 }
 
 .categoria {
@@ -75,7 +87,8 @@ label b {
   font-size: 24px;
   margin-bottom: 10px;
   color: #eb1e25;
-  font-family: 'Arial', sans-serif; /* Fonte bonita de exemplo */
+  font-family: 'Arial', sans-serif;
+  /* Fonte bonita de exemplo */
 }
 
 .comida {
@@ -90,7 +103,8 @@ label b {
   padding: 10px;
   background-color: #fff;
   transition: transform 0.2s ease-in-out;
-  font-family: 'Georgia', serif; /* Fonte bonita de exemplo */
+  font-family: 'Georgia', serif;
+  /* Fonte bonita de exemplo */
 }
 
 .comida:hover {
@@ -108,21 +122,24 @@ label b {
 .nomeComida {
   font-weight: bold;
   margin-top: 10px;
-  font-family: 'Verdana', sans-serif; /* Fonte bonita de exemplo */
+  font-family: 'Verdana', sans-serif;
+  /* Fonte bonita de exemplo */
 }
 
 .descricaoComida {
   margin-top: 5px;
   font-style: italic;
   color: #555;
-  font-family: 'Times New Roman', serif; /* Fonte bonita de exemplo */
+  font-family: 'Times New Roman', serif;
+  /* Fonte bonita de exemplo */
 }
 
 .valorComida {
   margin-top: 5px;
   font-weight: bold;
   color: #eb1e25;
-  font-family: 'Tahoma', sans-serif; /* Fonte bonita de exemplo */
+  font-family: 'Tahoma', sans-serif;
+  /* Fonte bonita de exemplo */
 }
 
 
@@ -130,14 +147,17 @@ label b {
 #escreverCritica {
   flex: 1;
   width: 95%;
-  min-height: 100px; /* Altura mínima do textarea */
+  min-height: 100px;
+  /* Altura mínima do textarea */
   padding: 10px;
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  resize: vertical; /* Permite redimensionamento vertical */
-  overflow-y: auto; /* Adiciona barras de rolagem vertical se necessário */
+  resize: vertical;
+  /* Permite redimensionamento vertical */
+  overflow-y: auto;
+  /* Adiciona barras de rolagem vertical se necessário */
 }
 
 #notaCritica {
@@ -166,7 +186,8 @@ label b {
 /* Estilos para a seção de críticas */
 .critica {
   display: flex;
-  margin-top: 20px; /* Espaçamento superior entre as críticas */
+  margin-top: 20px;
+  /* Espaçamento superior entre as críticas */
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -187,9 +208,11 @@ label b {
   margin-right: 10px;
 }
 
-a, #dono {
+a,
+#dono {
   text-decoration: none;
-  color: #eb1e25; /* Cor do link */
+  color: #eb1e25;
+  /* Cor do link */
   font-weight: bold;
 }
 
@@ -202,14 +225,18 @@ a, #dono {
 }
 
 .estrela {
-  width: 20px; /* Tamanho das estrelas */
-  margin-right: 5px; /* Espaçamento entre as estrelas */
+  width: 20px;
+  /* Tamanho das estrelas */
+  margin-right: 5px;
+  /* Espaçamento entre as estrelas */
 }
 
 .texto {
-  flex: 1; /* Ocupa todo o espaço disponível */
+  flex: 1;
+  /* Ocupa todo o espaço disponível */
   font-size: 18px;
-  color: #333; /* Cor do texto */
+  color: #333;
+  /* Cor do texto */
 }
 
 /* Estilo para a div do círculo vermelho */
@@ -217,36 +244,47 @@ a, #dono {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #eb1e25; /* Cor do círculo vermelho */
+  background-color: #eb1e25;
+  /* Cor do círculo vermelho */
   border-radius: 50%;
-  width: 70px; /* Ajuste o tamanho do círculo conforme necessário */
-  height: 70px; /* Ajuste o tamanho do círculo conforme necessário */
+  width: 70px;
+  /* Ajuste o tamanho do círculo conforme necessário */
+  height: 70px;
+  /* Ajuste o tamanho do círculo conforme necessário */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease-in-out; /* Efeito de transição de cor */
+  transition: background-color 0.3s ease-in-out;
+  /* Efeito de transição de cor */
 }
 
 /* Efeito de hover para o botão de carrinho */
 #carrinhoButton:hover {
-  background-color: #c90c17; /* Cor diferente no hover */
+  background-color: #c90c17;
+  /* Cor diferente no hover */
 }
 
 /* Estilo para a imagem do carrinho (mudando a cor para branca) */
 #carrinhoButton img {
-  width: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
-  height: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
-  fill: white; /* Define a cor do preenchimento da imagem como branca */
-  user-select: none; /* Impede a seleção da imagem */
-  pointer-events: none; /* Impede eventos de ponteiro na imagem */
+  width: 50px;
+  /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+  height: 50px;
+  /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+  fill: white;
+  /* Define a cor do preenchimento da imagem como branca */
+  user-select: none;
+  /* Impede a seleção da imagem */
+  pointer-events: none;
+  /* Impede eventos de ponteiro na imagem */
 }
 
 
 /* Efeito de clique para o botão de carrinho */
 #carrinhoButton:active {
-  transform: scale(0.9); /* Reduz a escala ao clicar para dar um efeito de clique */
+  transform: scale(0.9);
+  /* Reduz a escala ao clicar para dar um efeito de clique */
 }
 
 /* Estilo para o botão "Logout" */
@@ -323,11 +361,80 @@ a, #dono {
   color: #c90c17;
 }
 
-/* #flutuante {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.flutuante {
   position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 15%;
+  min-height: 10%;
+  transition: display 0.3s ease-in-out;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Helvetica', sans-serif;
+  /* Fonte bonita de exemplo */
+  background-color: #f7f7f7;
+  /* Cor de fundo */
+  padding: 20px;
+  /* Espaçamento interno */
+  border-radius: 10px;
+  /* Borda arredondada */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra */
 
-} */
+}
+
+.flutuante h1 {
+  font-size: 150%;
+  color: #eb1e25;
+  /* Cor do título */
+  margin-bottom: 10px;
+  /* Espaçamento inferior */
+}
+
+.flutuante input {
+  width: 90%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.flutuante button {
+  background-color: #eb1e25;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.flutuante button:hover {
+  background-color: #c9131b;
+}
+
+.flutuante .closeWindow{
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  transform: translate(-125%,125%);
+  background-color: #f7f7f7;
+  color: #919191;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 100%;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.flutuante .closeWindow:hover {
+  background-color: #919191;
+  color: #f7f7f7;
+}
