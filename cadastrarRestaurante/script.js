@@ -34,7 +34,7 @@ let restaurante = {
         //     texto: "",
         // }
     ],
-    // categorias: [
+    // categoria: [
     //     {
     //         nome: "",
     //         comidas: [

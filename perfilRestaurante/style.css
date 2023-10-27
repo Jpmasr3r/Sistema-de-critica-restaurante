@@ -331,6 +331,7 @@ a,
   max-width: 35%;
   max-height: 25%;
   margin-top: 10px;
+  text-align: center;
 }
 
 .add:hover {
@@ -437,4 +438,29 @@ a,
 .flutuante .closeWindow:hover {
   background-color: #919191;
   color: #f7f7f7;
+}
+
+/* Estilos para os radio buttons */
+.selecao {
+  display: none;
+}
+
+.selecao + b {
+  cursor: pointer;
+  padding-left: 25px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.selecao:checked + b::before {
+  content: "✔"; /* Símbolo de verificação para representar a seleção */
+  color: #eb1e25; /* Cor do símbolo quando selecionado */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px; /* Tamanho do símbolo */
+}
+
+.selecao:checked + b {
+  color: #eb1e25; /* Cor do texto quando selecionado */
 }

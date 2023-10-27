@@ -32,10 +32,10 @@
 
 
         <div id="cardapio">
-            <button id="addCategoria" class="add adm" >Add Categoria</button>
-            <button id="removeCategoria" class="remove adm" >Remove Categoria</button>
-            <button id="addComida" class="add adm" >Add Comida</button>
-            <button id="removeComida" class="remove adm" >Remove Comida</button>
+            <button id="addCategoria" class="add adm">Add Categoria</button>
+            <button id="removeCategoria" class="remove adm">Remove Categoria</button>
+            <button id="addComida" class="add adm">Add Comida</button>
+            <button id="removeComida" class="remove adm">Remove Comida</button>
             <h1>Cardapio:</h1>
 
             <!-- <div class="categoria">
@@ -132,13 +132,26 @@
     </div>
     <button id="voltar">Voltar</button>
 
-    <div class="flutuante">
+    <div class="flutuante" id="addCategoriaWindow">
         <!-- criar categoria -->
         <button class="closeWindow">X</button>
         <h1>Nome da Categoria</h1>
         <input type="text" id="cNome">
         <button id="cAdd">Adicionar Categoria</button>
-    
+
+    </div>
+
+    <div class="flutuante" id="removeCategoriaWindow">
+        <!-- criar categoria -->
+        <button class="closeWindow">X</button>
+        <h1>Qual categoria gostaria de remover</h1>
+        <div></div>
+        <!-- <label>
+            <input type="radio" value="placeholder" class="selecao">
+            <b>placeholder</b>
+        </label> -->
+        <button id="cRemove">remover Categoria</button>
+
     </div>
 
 

@@ -1,10 +1,10 @@
 <?php
 
-$host = "mysql";
+$host = "localhost";
 $user = "root";
 $password = "12345";
 $database = "trabalhoPW";
-$port = 3306;
+$port = 3310;
 $options = [
     PDO::ATTR_ERRMODE =>
     PDO::ERRMODE_EXCEPTION,
