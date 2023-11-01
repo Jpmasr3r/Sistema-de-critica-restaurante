@@ -57,9 +57,9 @@ submit.addEventListener("click", () => {
         restaurante = {
             nome: nomeRestaurante.value,
             endereco: enderecoRestaurante.value,
-            foto: fotoRestaurante.value,
+            foto: URL.createObjectURL(fotoRestaurante.files[0]),
             dono: logado,
-            nota: 0,
+            nota: Number(0),
             criticas: [],
             categoria: [],
         }

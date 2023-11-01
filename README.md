@@ -1,20 +1,8 @@
 # trabalho-de-PW
 
-## Outros
+## *11/06/23*
 
-### *Cores utilizadas*
-
-* escuro2 - 0a1d29
-* escuro1 - 41848d
-* base - 73a7a5
-* claro1 - 98c0b7
-* claro2 - f0ead1
-
-## Etapa 1
-
-### *11/06/23*
-
-#### Falta
+### Falta
 
 * criar input para fazer a critica
 * formatar os textos
@@ -23,48 +11,67 @@
 * pagina usuario
 * pagin critico
 
-#### Feito
+### Feito
 
 * cardapio adaptativo
 * criticas adaptativas
 * reformulado as cores
 
-### *12/06/23*
+## *12/06/23*
 
-#### Falta
+### Falta
 
 * pagina pricipal
 * pagina usuario
 * pagin critico
 
-#### Feito
+### Feito
 
 * cores refeitas
 * criar input para fazer a critica
 * formatar os textos
 * criar menus
 
-### *13/06/23*
+## *13/06/23*
 
-#### Falta
+### Falta
 
 * Logica de fazer critica
 
-#### Feito
+### Feito
 
 * pagina pricipal
 * pagina usuario
 * pagin critico
 * logica da pagina princiapal
 
-### *16/06/23 (apresentação)*
+## *16/06/23 (apresentação)*
 
-#### Falta
+### Falta
 
 * Nada (:
 
-#### Feito
+### Feito
 
 * mudei cores da tela de login
 * resolvi css
 * coloquei placeholders para imagens
+
+## *29/10/23*
+
+### Falta
+
+* pagina do usuario
+* carrinho
+* php
+* substituir local storage por banco de dados
+* salvar imagens no servidor
+
+### Feito
+
+* terminei o css (nao vou mais mudar)
+* coloquei local storage
+* terminei pagina de pesquisa
+* fiz informaçoes do restaurante
+* fiz adicionar restaurante
+* fiz cardapio restaurante

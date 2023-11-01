@@ -6,6 +6,7 @@ let user = {
     tipo: "",
     foto: "",
     criticas: [],
+    carrinho: [],
 }
 
 let nome = document.querySelector("#nome");
@@ -49,7 +50,7 @@ addConta.addEventListener("click", () => {
                 }
             })
 
-            user.foto = foto.value;
+            user.foto = URL.createObjectURL(foto.files[0]);
 
             let allUsers = [];
             allUsers = localStorage.getItem("allUsers");

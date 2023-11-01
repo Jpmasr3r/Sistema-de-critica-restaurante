@@ -183,60 +183,19 @@ label b {
   background-color: #c9131b;
 }
 
-/* Estilos para a seção de críticas */
-.critica {
-  display: flex;
-  margin-top: 20px;
-  /* Espaçamento superior entre as críticas */
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f7f7f7;
-}
-
 .usu {
   display: flex;
   align-items: center;
   margin-right: 15px;
 }
 
-.perfilUsu {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
 a,
-#dono {
+#dono,
+.link {
   text-decoration: none;
   color: #eb1e25;
   /* Cor do link */
   font-weight: bold;
-}
-
-.informacoes {
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-  font-size: 16px;
-  color: #666;
-}
-
-.estrela {
-  width: 20px;
-  /* Tamanho das estrelas */
-  margin-right: 5px;
-  /* Espaçamento entre as estrelas */
-}
-
-.texto {
-  flex: 1;
-  /* Ocupa todo o espaço disponível */
-  font-size: 18px;
-  color: #333;
-  /* Cor do texto */
 }
 
 /* Estilo para a div do círculo vermelho */
@@ -435,7 +394,7 @@ a,
   margin-top: 10%;
 }
 
-.flutuante .closeWindow:hover {
+.flutuante .closeWindow:hover{
   background-color: #919191;
   color: #f7f7f7;
 }
@@ -463,4 +422,85 @@ a,
 
 .selecao:checked + b {
   color: #eb1e25; /* Cor do texto quando selecionado */
+}
+
+#removeCategoriaWindow > div, #addComidaWindow > div, #removeComidaWindow > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilos para a seção de críticas */
+.critica {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  margin-top: 20px;
+  padding: 15px;
+  position: relative; /* Para posicionar os elementos filhos */
+}
+
+/* Estilos para a imagem do usuário */
+.perfilUsu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Estilos para as informações do usuário (nome, nota e data) */
+.informacoes {
+  display: flex;
+  justify-content: space-between; /* Alinha os elementos à esquerda e à direita */
+  align-items: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Estilos para a nota (estrelas) */
+.estrela {
+  width: 20px;
+  margin-right: 5px;
+}
+
+/* Estilos para o botão de deletar crítica */
+.deleteCritica {
+  position: absolute;
+  top: 10px; /* Posiciona no canto superior direito */
+  right: 10px;
+  background-color: #f7f7f7;
+  color: #919191;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.deleteCritica:hover {
+  background-color: #919191;
+  color: #f7f7f7;
+}
+
+/* Estilos para o texto da crítica */
+.texto {
+  word-wrap: break-word;
+  max-width: 50vh;
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Estilos para o nome do restaurante */
+.link {
+  text-decoration: none;
+  color: #eb1e25;
+  font-weight: bold;
 }
