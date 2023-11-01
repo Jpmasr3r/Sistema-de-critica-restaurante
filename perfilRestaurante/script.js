@@ -437,4 +437,6 @@ function mediaNotas() {
 
 	localStorage.setItem("selectedRestaurante", JSON.stringify(selectedRestaurante));
 	save();
+
+	console.log(localStorage);
 }
