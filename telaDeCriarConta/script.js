@@ -52,6 +52,7 @@ addConta.addEventListener("click", () => {
 
             user.foto = URL.createObjectURL(foto.files[0]);
 
+            
             let allUsers = [];
             allUsers = localStorage.getItem("allUsers");
             if (!allUsers) {
@@ -59,7 +60,6 @@ addConta.addEventListener("click", () => {
             } else {
                 allUsers = JSON.parse(allUsers);
             }
-
             allUsers.push(user);
 
             localStorage.setItem("allUsers", JSON.stringify(allUsers));
