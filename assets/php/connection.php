@@ -1,20 +1,24 @@
 <?php
 
-$host = "localhost";
+$host = "26.209.49.87";
 $user = "root";
 $password = "12345";
 $database = "trabalhoPW";
-$port = 3310;
+$port = 3320;
 $options = [
     PDO::ATTR_ERRMODE =>
     PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE =>
+    PDO::ATTR_DEFAULT_FETCH_MODE => 
     PDO::FETCH_ASSOC,
 ];
 
-$conn = new PDO(
-    "mysql:host=$host;port=$port;dbname=$database",
-    $user,
-    $password,
-    $options
-);
+try {
+    $conn = new PDO(
+        "mysql:host=$host;port=$port;dbname=$database",
+        $user,
+        $password,
+        $options
+    );
+} catch (PDOException $erro) {
+    echo "ERRO => " . $erro->getMessage();
+}

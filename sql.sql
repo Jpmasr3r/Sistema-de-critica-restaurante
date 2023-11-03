@@ -1,3 +1,7 @@
+DROP DATABASE trabalhoPW;
+
+CREATE DATABASE trabalhoPW;
+
 USE trabalhoPW;
 
 CREATE TABLE restaurante(
@@ -21,9 +25,12 @@ CREATE TABLE critica(
     id INT NOT NULL KEY AUTO_INCREMENT
 );
 
+DROP Table user;
 
 
 
+SELECT * FROM user;
 
 
+INSERT INTO user VALUES ();
 

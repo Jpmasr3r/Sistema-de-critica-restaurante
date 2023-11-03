@@ -9,14 +9,6 @@ logout.addEventListener("click", () => {
     location.href = "..//index.html"
 })
 
-let allUsers = [];
-allUsers = localStorage.getItem("allUsers");
-if (!allUsers) {
-    allUsers = [];
-} else {
-    allUsers = JSON.parse(allUsers)
-}
-
 let allRestaurantes = [];
 allRestaurantes = localStorage.getItem("allRestaurantes");
 if (!allRestaurantes) {
@@ -89,7 +81,14 @@ tipo.forEach(e => {
     })
 })
 
-function printAllUsers(tipo) {
+async function getUsers() {
+    let data = await fetch("../assets/php/getAllUsers.php").then(res => res.json());
+    console.log(data.result);
+    return data.result;
+}
+
+async function printAllUsers(tipo) {
+    let allUsers = await getUsers();
     allUsers.forEach(e => {
         if (e.nome.toLowerCase().includes(texto.value.toLowerCase())) {
             const div = document.createElement('div');

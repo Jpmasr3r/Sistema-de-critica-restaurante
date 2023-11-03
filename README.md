@@ -75,3 +75,20 @@
 * fiz informaçoes do restaurante
 * fiz adicionar restaurante
 * fiz cardapio restaurante
+
+
+## *03/11/23*
+
+### Falta
+
+* cadastro de restaurante por php
+* cadastro de categori e comida por php
+* cadastro no carrinho
+* informaçoes do usuario na pagina do usuario
+
+### Feito
+
+* cadrastro de usuario por php
+* login de usuario por php
+* copia de imagem para a pasta raiz
+* funcionando o BD

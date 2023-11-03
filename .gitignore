@@ -1,4 +1,6 @@
 # docker-compose.yml
 # .env
 # sql.sql
-# .vscode
+.vscode
+.snapshots
+assets/uploads
