@@ -1,4 +1,4 @@
-docker-compose.yml
-.env
-sql.sql
-.vscode
+#docker-compose.yml
+#.env
+#sql.sql
+#.vscode

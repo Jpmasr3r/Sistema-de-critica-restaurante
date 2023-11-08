@@ -1,10 +1,10 @@
 <?php
 
-$host = "localhost";
+$host = "26.209.49.87";
 $user = "root";
 $password = "12345";
 $database = "trabalhoPW";
-$port = 3310;
+$port = 3320;
 $options = [
     PDO::ATTR_ERRMODE =>
     PDO::ERRMODE_EXCEPTION,
@@ -12,9 +12,17 @@ $options = [
     PDO::FETCH_ASSOC,
 ];
 
-$conn = new PDO(
-    "mysql:host=$host;port=$port;dbname=$database",
-    $user,
-    $password,
-    $options
-);
+$output;
+
+
+try {
+    $conn = new PDO(
+        "mysql:host=$host;port=$port;dbname=$database",
+        $user,
+        $password,
+        $options
+    );
+    $output["status"] = "Conexao Bem Sucedida";
+} catch (PDOException $e) {
+    $output["status"] = "Conexao Falha :" . $e->getMessage();
+}

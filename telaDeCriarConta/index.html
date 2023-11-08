@@ -28,16 +28,14 @@
         <label for="senha">Verificar senha:</label>
         <input class="textBoxs" type="password" id="Vsenha">
 
-        <span id="erroSenha">Senhas são diferentes</span>
-
         <label>Você é:</label>
         <label><input type="radio" name="tipo" value="cliente" class="selecao"> <b>Cliente</b></label>
         <label><input type="radio" name="tipo" value="critico" class="selecao"> <b>Crítico</b></label>
 
         <label for="foto">Foto de perfil (link):</label>
-        <input class="textBoxs" type="text" id="foto">
+        <input class="textBoxs" type="file" id="foto" accept=".png , .jpge , .jpg">
 
-        <span id="erroTexto">Faltam informações</span>
+        <span id="erroTexto"></span>
 
         <button id="addConta">Criar</button>
         <button id="logar">Já tem conta?<br>Faça login!</button>

@@ -1,13 +1,3 @@
-let user = {
-    nome: "",
-    email: "",
-    telefone: "",
-    senha: "",
-    tipo: "",
-    foto: "",
-    criticas: [],
-}
-
 let nome = document.querySelector("#nome");
 let email = document.querySelector("#email");
 let telefone = document.querySelector("#telefone");
@@ -17,7 +7,6 @@ let selecao = document.querySelectorAll(".selecao");
 let foto = document.querySelector("#foto");
 
 let erroTexto = document.querySelector("#erroTexto");
-let erroSenha = document.querySelector("#erroSenha");
 
 let logar = document.querySelector("#logar");
 logar.addEventListener("click", () => {
@@ -37,56 +26,56 @@ addConta.addEventListener("click", () => {
         erroTexto.style.display = "none";
 
         if (senha.value == Vsenha.value) {
-            erroSenha.style.display = "none";
+            erroTexto.style.display = "none";
 
-            user.nome = nome.value;
-            user.email = email.value;
-            user.telefone = telefone.value;
-            user.senha = senha.value;
+            let user = {
+                nome: nome.value,
+                email: email.value,
+                telefone: telefone.value,
+                senha: senha.value,
+                tipo: "",
+                foto: foto.files[0],
+            }
+
             selecao.forEach((e) => {
                 if (e.checked) {
                     user.tipo = e.value
                 }
             })
 
-            user.foto = foto.value;
-
-            let allUsers = [];
-            allUsers = localStorage.getItem("allUsers");
-            if (!allUsers) {
-                allUsers = [];
-            } else {
-                allUsers = JSON.parse(allUsers);
-            }
-
-            allUsers.push(user);
-
-            localStorage.setItem("allUsers", JSON.stringify(allUsers));
-            location.href = "../telaDeLogin/index.html";
-
-
-
-            // let query = new URLSearchParams(user).toString();
-            // let url = `add.php?${query}`;
-            // add(url);
+            addUser(user);
 
         } else {
-            erroSenha.style.display = "inherit";
+            erroTexto.style.display = "flex";
+            erroTexto.innerHTML = "As senhas são diferentes";
+
         }
 
 
 
     } else {
-        erroTexto.style.display = "inherit";
+        erroTexto.style.display = "flex";
+        erroTexto.innerHTML = "Faltam informações";
     }
 })
 
-// async function add(url) {
-//     let res = await fetch(url);
-//     let data = await res.json();
-//     console.log(data);
-// }
+async function addUser(user) {
+    let formData = new FormData();
+    for (const i in user) {
+        let e = user[i];
+        formData.append(i, e);
+    }
 
+    let data = await fetch("../assets/php/addUser.php", {
+        method: "POST",
+        body: formData,
+    }).then(res => res.json());
 
+    erroTexto.style.display = "flex";
+    erroTexto.innerHTML = data.status;
 
+    if(data.status == "Usuario cadastrado com sucesso") {
+        location.href = "../telaDeLogin/index.html";
+    }
 
+}

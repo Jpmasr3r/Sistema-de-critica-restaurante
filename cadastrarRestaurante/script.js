@@ -14,63 +14,50 @@ if (!logado) {
 } else {
     logado = JSON.parse(logado);
 }
-let allRestaurantes = localStorage.getItem("allRestaurantes");
-if (!allRestaurantes) {
-    allRestaurantes = [];
-} else {
-    allRestaurantes = JSON.parse(allRestaurantes);
-}
 
-let restaurante = {
-    nome: "",
-    endereco: "",
-    foto: "",
-    dono: "",
-    nota: 0,
-    criticas: [
-        // {
-        //     fez: "",
-        //     notaDada: 0,
-        //     texto: "",
-        // }
-    ],
-    // categoria: [
-    //     {
-    //         nome: "",
-    //         comidas: [
-    //             {
-    //                 imagem: "",
-    //                 nome: "",
-    //                 desc: "",
-    //                 preco: 0,
-    //             },
-    //         ],
-    //     },
-    // ],
-}
+let erroTexto = document.querySelector("#erroTexto");
 
 submit.addEventListener("click", () => {
     if (nomeRestaurante.value != "" &&
         enderecoRestaurante.value != "" &&
         fotoRestaurante.value != "" &&
         logado != "") {
-        restaurante = {
+        let restaurante = {
             nome: nomeRestaurante.value,
             endereco: enderecoRestaurante.value,
-            foto: fotoRestaurante.value,
-            dono: logado,
+            foto: fotoRestaurante.files[0],
+            dono: logado.id,
             nota: 0,
-            criticas: [],
-            categoria: [],
         }
-        console.log(restaurante);
-        allRestaurantes.push(restaurante);
-        localStorage.setItem("allRestaurantes", JSON.stringify(allRestaurantes));
-        location.href = "../areaDePesquisa/index.html";
+
+        addRestaurante(restaurante);
+
+
 
     } else {
         console.log("erro");
     }
 });
 
+async function addRestaurante(restaurante) {
+    let formData = new FormData();
+    for (const i in restaurante) {
+        let e = restaurante[i];
+        formData.append(i, e);
+    }
+
+    let data = await fetch("../assets/php/addRestaurante.php", {
+        method: "POST",
+        body: formData,
+    }).then(res => res.json());
+
+    console.log(data);
+
+    erroTexto.style.display = "flex";
+    erroTexto.innerHTML = data.status;
+
+    if(data.status == "Usuario cadastrado com sucesso") {
+        location.href = "../telaDeLogin/index.html";
+    }
+}
 

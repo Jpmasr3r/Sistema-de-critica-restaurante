@@ -18,7 +18,7 @@ let selectedPerfil = JSON.parse(localStorage.getItem("selectedPerfil"));
 
 let admB = document.querySelectorAll(".adm");
 
-if(selectedPerfil.email != logado.email) {
+if(selectedPerfil.id != logado.id) {
     admB.forEach(e => {
         e.style.display = "none";
     });
