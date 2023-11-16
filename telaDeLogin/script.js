@@ -14,13 +14,12 @@ login.addEventListener("click", () => {
 });
 
 async function getUser() {
-    let data = await fetch(`../assets/php/getLogin.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
+    let data = await fetch(`../assets/php/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
 
     erroTexto.style.display = "flex";
     erroTexto.innerHTML = data.status;
 
     if(data.status == "Logado com sucesso") {
-        localStorage.setItem("logado",JSON.stringify(data.result));
         location.href = "../areaDePesquisa/index.html";
     }
 }

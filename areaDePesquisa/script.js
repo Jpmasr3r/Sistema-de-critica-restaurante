@@ -1,23 +1,26 @@
+async function getLogado() {
+    let data = await fetch("../assets/php/getLogado.php").then(res => res.text());
+    if(data == "Nao Logado") {
+        location.href = "../telaDeLogin/index.html";
+    }
+}
+
+getLogado();
+
 let carrinhoButton = document.querySelector("#carrinhoButton");
 carrinhoButton.addEventListener("click", () => {
     location.href = "../carrinho/index.html";
 });
 
 let logout = document.querySelector("#logout");
-logout.addEventListener("click", () => {
-    localStorage.removeItem("logado");
-    location.href = "..//index.html"
+logout.addEventListener("click", async () => {
+    let data = await fetch("../assets/php/setDeslogado.php").then(res => res.text());
+    console.log(data);
+    if (data == "OK") {
+        location.href = "../telaDeLogin/index.html";
+    }
 })
 
-let allRestaurantes = [];
-allRestaurantes = localStorage.getItem("allRestaurantes");
-if (!allRestaurantes) {
-    allRestaurantes = [];
-} else {
-    allRestaurantes = JSON.parse(allRestaurantes)
-}
-
-let logado = JSON.parse(localStorage.getItem("logado"));
 let tipo = document.querySelectorAll(".selecao");
 let buttonPes = document.querySelector("#buttonPes");
 let area = document.querySelector("#area");
@@ -82,8 +85,13 @@ tipo.forEach(e => {
 })
 
 async function getAllUsers() {
-    let data = await fetch("../assets/php/getAllUsers.php").then(res => res.json());
-    return data;
+    try {
+        let data = await fetch("../assets/php/getAllUsers.php").then(res => res.json());
+        return await data;
+    } catch (error) {
+        console.log(error.message);
+        return [];
+    }
 }
 
 async function printAllUsers(tipo) {
@@ -99,9 +107,9 @@ async function printAllUsers(tipo) {
 
             const a = document.createElement('a');
             a.href = "../perfil/index.html";
-            if(e.email == logado.email) {
+            if (e.logado) {
                 a.innerHTML = `${e.nome} (Você)`;
-            }else {
+            } else {
                 a.innerHTML = e.nome;
             }
 
@@ -114,7 +122,7 @@ async function printAllUsers(tipo) {
             div.appendChild(span);
 
             a.addEventListener("click", () => {
-                localStorage.setItem("selectedPerfil", JSON.stringify(e));
+                fetch(`../assets/php/selectUser.php?id=${e.id}`);
             })
 
             if (tipo == "todos") {
@@ -136,7 +144,13 @@ async function printAllUsers(tipo) {
     })
 }
 
-function printRestaurantes() {
+async function getAllRestaurantes() {
+    let data = await fetch("../assets/php/getAllRestaurantes.php").then(res => res.json());
+    return data;
+}
+
+async function printRestaurantes() {
+    let allRestaurantes = await getAllRestaurantes();
     allRestaurantes.forEach(e => {
         if (e.nome.toLowerCase().includes(texto.value.toLowerCase())) {
             const div = document.createElement("div");

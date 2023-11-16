@@ -8,13 +8,6 @@ voltar.addEventListener("click",() => {
     location.href = "../perfil/index.html";
 })
 
-let logado = localStorage.getItem("logado");
-if (!logado) {
-    logado = "";
-} else {
-    logado = JSON.parse(logado);
-}
-
 let erroTexto = document.querySelector("#erroTexto");
 
 submit.addEventListener("click", () => {
@@ -31,9 +24,6 @@ submit.addEventListener("click", () => {
         }
 
         addRestaurante(restaurante);
-
-
-
     } else {
         console.log("erro");
     }
@@ -46,7 +36,7 @@ async function addRestaurante(restaurante) {
         formData.append(i, e);
     }
 
-    let data = await fetch("../assets/php/addRestaurante.php", {
+    let data = await fetch("../assets/php/setRestaurante.php", {
         method: "POST",
         body: formData,
     }).then(res => res.json());

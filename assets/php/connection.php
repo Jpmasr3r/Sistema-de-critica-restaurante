@@ -22,7 +22,11 @@ try {
         $password,
         $options
     );
-    $output["status"] = "Conexao Bem Sucedida";
+    $output = [
+        "status" => "Conexao Bem Sucedida",
+    ];
 } catch (PDOException $e) {
-    $output["status"] = "Conexao Falha :" . $e->getMessage();
+    $output = [
+        "status"=> "Conexao Falha :" . $e->getMessage(),
+    ];
 }
