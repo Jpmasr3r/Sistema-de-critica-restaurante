@@ -1,6 +1,6 @@
 <?php
 
-require_once "./connection.php";
+require_once "../connection.php";
 
 $usu = [
     "email" => $_GET["email"],
@@ -17,7 +17,6 @@ $output = [
 if ($output["result"]) {
     if (password_verify($usu["senha"], $output["result"]["senha"])) {
         unset($output["result"]["senha"]);
-        unset($output["result"]["id"]);
 
         session_start();
         $_SESSION["user"] = $output["result"];

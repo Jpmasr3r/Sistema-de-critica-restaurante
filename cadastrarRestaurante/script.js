@@ -1,3 +1,12 @@
+async function getLogado() {
+    let data = await fetch("../assets/php/get/getLogado.php").then(res => res.text());
+    if(data == "Nao Logado") {
+        location.href = "../telaDeLogin/index.html";
+    }
+}
+
+getLogado();
+
 let nomeRestaurante = document.querySelector("#nomeRestaurante");
 let enderecoRestaurante = document.querySelector("#enderecoRestaurante");
 let fotoRestaurante = document.querySelector("#fotoRestaurante");
@@ -13,13 +22,11 @@ let erroTexto = document.querySelector("#erroTexto");
 submit.addEventListener("click", () => {
     if (nomeRestaurante.value != "" &&
         enderecoRestaurante.value != "" &&
-        fotoRestaurante.value != "" &&
-        logado != "") {
+        fotoRestaurante.value != "") {
         let restaurante = {
             nome: nomeRestaurante.value,
             endereco: enderecoRestaurante.value,
             foto: fotoRestaurante.files[0],
-            dono: logado.id,
             nota: 0,
         }
 
@@ -36,18 +43,17 @@ async function addRestaurante(restaurante) {
         formData.append(i, e);
     }
 
-    let data = await fetch("../assets/php/setRestaurante.php", {
+    let data = await fetch("../assets/php/set/setRestaurante.php", {
         method: "POST",
         body: formData,
-    }).then(res => res.json());
-
-    console.log(data);
+    }).then(res => res.text());
 
     erroTexto.style.display = "flex";
-    erroTexto.innerHTML = data.status;
+    erroTexto.innerHTML = data;
 
-    if(data.status == "Usuario cadastrado com sucesso") {
-        location.href = "../telaDeLogin/index.html";
+    console.log(data);
+    if(data == "OK") {
+        location.href = "../areaDePesquisa/index.html";
     }
 }
 

@@ -3,5 +3,5 @@
 # .sql
 # .vscode
 .snapshots
-assets/uploads/img/user/
-assets/uploads/img/restaurante/
+# assets/uploads/img/user/
+# assets/uploads/img/restaurante/

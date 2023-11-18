@@ -14,7 +14,7 @@ login.addEventListener("click", () => {
 });
 
 async function getUser() {
-    let data = await fetch(`../assets/php/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
+    let data = await fetch(`../assets/php/set/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
 
     erroTexto.style.display = "flex";
     erroTexto.innerHTML = data.status;

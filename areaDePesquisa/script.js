@@ -1,5 +1,5 @@
 async function getLogado() {
-    let data = await fetch("../assets/php/getLogado.php").then(res => res.text());
+    let data = await fetch("../assets/php/get/getLogado.php").then(res => res.text());
     if(data == "Nao Logado") {
         location.href = "../telaDeLogin/index.html";
     }
@@ -14,7 +14,7 @@ carrinhoButton.addEventListener("click", () => {
 
 let logout = document.querySelector("#logout");
 logout.addEventListener("click", async () => {
-    let data = await fetch("../assets/php/setDeslogado.php").then(res => res.text());
+    let data = await fetch("../assets/php/set/setDeslogado.php").then(res => res.text());
     console.log(data);
     if (data == "OK") {
         location.href = "../telaDeLogin/index.html";
@@ -86,10 +86,10 @@ tipo.forEach(e => {
 
 async function getAllUsers() {
     try {
-        let data = await fetch("../assets/php/getAllUsers.php").then(res => res.json());
+        let data = await fetch("../assets/php/get/getAllUsers.php").then(res => res.json());
         return await data;
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
         return [];
     }
 }
@@ -106,7 +106,6 @@ async function printAllUsers(tipo) {
             img.src = e.foto;
 
             const a = document.createElement('a');
-            a.href = "../perfil/index.html";
             if (e.logado) {
                 a.innerHTML = `${e.nome} (Você)`;
             } else {
@@ -121,8 +120,15 @@ async function printAllUsers(tipo) {
             div.appendChild(a);
             div.appendChild(span);
 
-            a.addEventListener("click", () => {
-                fetch(`../assets/php/selectUser.php?id=${e.id}`);
+            a.addEventListener("click", async () => {
+                try {
+                    let data = await fetch(`../assets/php/set/setSelectedUser.php?id=${e.id}`).then(res => res.text());
+                    if(data == "OK") {
+                        location.href = "../perfil/index.html";
+                    }
+                } catch (error) {
+                    console.log("Error: " + error.getMessage());
+                }
             })
 
             if (tipo == "todos") {
@@ -145,8 +151,13 @@ async function printAllUsers(tipo) {
 }
 
 async function getAllRestaurantes() {
-    let data = await fetch("../assets/php/getAllRestaurantes.php").then(res => res.json());
-    return data;
+    try {
+        let data = await fetch("../assets/php/get/getAllRestaurantes.php").then(res => res.json());
+        return await data;
+    } catch (error) {
+        console.log(error.message);
+        return [];
+    }
 }
 
 async function printRestaurantes() {
@@ -161,7 +172,6 @@ async function printRestaurantes() {
             img.src = e.foto;
 
             const a = document.createElement("a");
-            a.href = "../perfilRestaurante/index.html";
             a.innerHTML = e.nome;
 
             const divNota = document.createElement("divNota");
@@ -196,6 +206,17 @@ async function printRestaurantes() {
             div.appendChild(br);
             div.appendChild(span);
             area.appendChild(div);
+
+            a.addEventListener("click", async () => {
+                try {
+                    let data = await fetch(`../assets/php/set/setSelectedRestaurante.php?id=${e.id}`).then(res => res.text());
+                    if(data == "OK") {
+                        location.href = "../perfilRestaurante/index.html";
+                    }
+                } catch (error) {
+                    console.log("Error: " + error.getMessage());
+                }
+            })
 
             div.addEventListener("click", () => {
                 localStorage.setItem("selectedRestaurante", JSON.stringify(e));
