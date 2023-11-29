@@ -107,6 +107,7 @@ body {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     max-width: 150px;
     transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
     /* Adicionamos uma transição suave para o efeito de hover */
 }
 

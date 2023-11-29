@@ -24,10 +24,14 @@ body {
     /* Outros estilos que você já definiu */
 
     /* Adicione estilos para o texto das informações do crítico */
-    font-size: 18px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    margin-top: 20px; /* Espaçamento superior */
+    font-size: 18px;
+    /* Tamanho da fonte */
+    color: #333;
+    /* Cor do texto */
+    line-height: 1.5;
+    /* Espaçamento entre linhas */
+    margin-top: 20px;
+    /* Espaçamento superior */
 }
 
 
@@ -35,16 +39,6 @@ body {
     font-size: 24px;
     color: #eb1e25;
     margin-bottom: 10px;
-}
-
-.critica {
-    display: flex;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f7f7f7;
-    margin-bottom: 10px;
-    padding: 10px;
 }
 
 .perfilUsu {
@@ -62,7 +56,8 @@ body {
     margin-right: 15px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start; /* Alinhamento à esquerda */
+    align-items: flex-start;
+    /* Alinhamento à esquerda */
 }
 
 .criticoNome {
@@ -82,14 +77,9 @@ body {
 }
 
 .texto {
-    flex: 1;
     font-size: 18px;
     color: #333;
     margin-top: 10px;
-    /* Remova estas propriedades para permitir que o texto ocupe o espaço necessário */
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
 }
 
 
@@ -111,9 +101,12 @@ body {
     font-size: 18px;
     color: #333;
     text-decoration: none;
-    white-space: nowrap; /* Evita que o nome do restaurante quebre a linha */
-    overflow: hidden; /* Esconde o texto que não cabe */
-    text-overflow: ellipsis; /* Mostra reticências (...) quando o texto é cortado */
+    white-space: nowrap;
+    /* Evita que o nome do restaurante quebre a linha */
+    overflow: hidden;
+    /* Esconde o texto que não cabe */
+    text-overflow: ellipsis;
+    /* Mostra reticências (...) quando o texto é cortado */
 }
 
 .nota .emoji {
@@ -127,36 +120,47 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #eb1e25; /* Cor do círculo vermelho */
+    background-color: #eb1e25;
+    /* Cor do círculo vermelho */
     border-radius: 50%;
-    width: 70px; /* Ajuste o tamanho do círculo conforme necessário */
-    height: 70px; /* Ajuste o tamanho do círculo conforme necessário */
+    width: 70px;
+    /* Ajuste o tamanho do círculo conforme necessário */
+    height: 70px;
+    /* Ajuste o tamanho do círculo conforme necessário */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease-in-out; /* Efeito de transição de cor */
+    transition: background-color 0.3s ease-in-out;
+    /* Efeito de transição de cor */
 }
 
 /* Efeito de hover para o botão de carrinho */
 #carrinhoButton:hover {
-    background-color: #c90c17; /* Cor diferente no hover */
+    background-color: #c90c17;
+    /* Cor diferente no hover */
 }
 
 /* Estilo para a imagem do carrinho (mudando a cor para branca) */
 #carrinhoButton img {
-    width: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
-    height: 50px; /* Ajuste o tamanho da imagem do carrinho conforme necessário */
-    fill: white; /* Define a cor do preenchimento da imagem como branca */
-    user-select: none; /* Impede a seleção da imagem */
-    pointer-events: none; /* Impede eventos de ponteiro na imagem */
+    width: 50px;
+    /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+    height: 50px;
+    /* Ajuste o tamanho da imagem do carrinho conforme necessário */
+    fill: white;
+    /* Define a cor do preenchimento da imagem como branca */
+    user-select: none;
+    /* Impede a seleção da imagem */
+    pointer-events: none;
+    /* Impede eventos de ponteiro na imagem */
 }
 
 
 /* Efeito de clique para o botão de carrinho */
 #carrinhoButton:active {
-    transform: scale(0.9); /* Reduz a escala ao clicar para dar um efeito de clique */
+    transform: scale(0.9);
+    /* Reduz a escala ao clicar para dar um efeito de clique */
 }
 
 
@@ -203,3 +207,65 @@ body {
     background-color: #c90c17;
 }
 
+#nome,
+#telefone,
+#tipo {
+    font-weight: bold;
+    font-size: 115%;
+}
+
+/* Estilos para a seção de críticas */
+.critica {
+    display: flex;
+    margin-top: 20px;
+    /* Espaçamento superior entre as críticas */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+
+.usu {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.perfilUsu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 16px;
+    color: #666;
+}
+
+.estrela {
+    width: 20px;
+    /* Tamanho das estrelas */
+    margin-right: 5px;
+    /* Espaçamento entre as estrelas */
+}
+
+.texto {
+    flex: 1;
+    /* Ocupa todo o espaço disponível */
+    font-size: 18px;
+    color: #333;
+    /* Cor do texto */
+}
+
+.desativado {
+    filter: grayscale(100%);
+}
+
+.link {
+    cursor: pointer;
+}

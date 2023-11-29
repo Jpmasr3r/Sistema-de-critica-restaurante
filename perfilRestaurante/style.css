@@ -171,16 +171,27 @@ label b {
 
 #addCritica {
   background-color: #eb1e25;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  font-weight: bold;
+}
+
+#addCritica:disabled {
+  background-color: #fff;
+  color: #eb1e25;
+  border: #eb1e25 solid 2px;
 }
 
 #addCritica:hover {
   background-color: #c9131b;
+}
+
+#addCritica:disabled:hover {
+  background-color: #c5c4c4;
 }
 
 /* Estilos para a seção de críticas */

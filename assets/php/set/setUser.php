@@ -20,17 +20,20 @@ $stmt->execute();
 $output["result"] = $stmt->fetchAll();
 if ($output["result"]) {
     $output["result"] = "";
-    $output["status"] = "Usuario ja cadastrado";
-    echo json_encode($output);
+    echo "Usuario ja cadastrado";
     exit();
 }
-$output["result"] = "";
 
 $newNameFile = md5(microtime()) . $usu["foto"]["name"];
 
-move_uploaded_file($usu["foto"]["tmp_name"], "../uploads/img/user/" . $newNameFile);
+try {
+    move_uploaded_file($usu["foto"]["tmp_name"], "../../uploads/img/user/" . $newNameFile);
+    $usu["foto"] = "../assets/uploads/img/user/" . $newNameFile;
+} catch (PDOException $e) {
+    echo "Erro ao cadrastar usuario " . $e->getMessage();
+    exit();
+}
 
-$usu["foto"] = "../assets/uploads/img/user/" . $newNameFile;
 
 $sql = "INSERT INTO user(nome,email,telefone,senha,tipo,foto)
         VALUES (:nome,:email,:telefone,:senha,:tipo,:foto)";
@@ -38,11 +41,8 @@ $stmt = $conn->prepare($sql);
 
 try {
     $stmt->execute($usu);
-    $output["status"] = "Usuario cadastrado com sucesso";
-    echo json_encode($output);
-
+    echo "OK";
 } catch (PDOException $e) {
-    echo json_encode($output);
-    $output["status"] = "Erro ao cadrastar usuario " . $e->getMessage();
-
+    echo "Erro ao cadrastar usuario " . $e->getMessage();
+    exit();
 }

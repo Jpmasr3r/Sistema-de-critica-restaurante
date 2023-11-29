@@ -1,6 +1,6 @@
 async function getLogado() {
     let data = await fetch("../assets/php/get/getLogado.php").then(res => res.text());
-    if(data == "Nao Logado") {
+    if (data == "Nao Logado") {
         location.href = "../telaDeLogin/index.html";
     }
 }
@@ -114,16 +114,16 @@ async function printAllUsers(tipo) {
 
             const span = document.createElement('span');
             span.classList.add("tipo");
-            span.innerHTML = e.tipo;
+            span.innerHTML = `${e.tipo}`.toUpperCase();
 
             div.appendChild(img);
             div.appendChild(a);
             div.appendChild(span);
 
-            a.addEventListener("click", async () => {
+            div.addEventListener("click", async () => {
                 try {
                     let data = await fetch(`../assets/php/set/setSelectedUser.php?id=${e.id}`).then(res => res.text());
-                    if(data == "OK") {
+                    if (data == "OK") {
                         location.href = "../perfil/index.html";
                     }
                 } catch (error) {
@@ -177,28 +177,26 @@ async function printRestaurantes() {
             const divNota = document.createElement("divNota");
             divNota.classList.add("nota");
 
-            for (let i = 1; i <= e.nota; i++) {
+            for (let i = 1; i <= 5; i++) {
                 const spanEmoji = document.createElement("span");
                 spanEmoji.classList.add("emoji");
-                spanEmoji.innerHTML = "⭐️";
+
+                if (i <= e.nota) {
+                    spanEmoji.innerHTML = "⭐️";
+                } else {
+                    spanEmoji.classList.add("desativado");
+                    spanEmoji.innerHTML = "⭐️";
+                }
 
                 divNota.appendChild(spanEmoji);
             }
 
-            for (let i = 1; i <= 5 - e.nota; i++) {
-                const spanEmoji = document.createElement("span");
-                spanEmoji.classList.add("emoji");
-                spanEmoji.classList.add("desativado");
-                spanEmoji.innerHTML = "⭐️";
-
-                divNota.appendChild(spanEmoji);
-            }
 
             const br = document.createElement("br");
 
             const span = document.createElement("span");
             span.classList.add("tipo");
-            span.innerHTML = "Restaurante";
+            span.innerHTML = "RESTAURANTE";
 
             div.appendChild(img);
             div.appendChild(a);
@@ -207,10 +205,10 @@ async function printRestaurantes() {
             div.appendChild(span);
             area.appendChild(div);
 
-            a.addEventListener("click", async () => {
+            div.addEventListener("click", async () => {
                 try {
                     let data = await fetch(`../assets/php/set/setSelectedRestaurante.php?id=${e.id}`).then(res => res.text());
-                    if(data == "OK") {
+                    if (data == "OK") {
                         location.href = "../perfilRestaurante/index.html";
                     }
                 } catch (error) {

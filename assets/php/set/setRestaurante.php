@@ -13,7 +13,7 @@ $res["dono"] = $_SESSION["user"]["id"];
 
 $newNameFile = md5(microtime()) . $res["foto"]["name"];
 
-move_uploaded_file($res["foto"]["tmp_name"], "../uploads/img/restaurante/" . $newNameFile);
+move_uploaded_file($res["foto"]["tmp_name"], "../../uploads/img/restaurante/" . $newNameFile);
 
 $res["foto"] = "../assets/uploads/img/restaurante/" . $newNameFile;
 

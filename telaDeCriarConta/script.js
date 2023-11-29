@@ -69,12 +69,12 @@ async function addUser(user) {
     let data = await fetch("../assets/php/set/setUser.php", {
         method: "POST",
         body: formData,
-    }).then(res => res.json());
+    }).then(res => res.text());
 
     erroTexto.style.display = "flex";
-    erroTexto.innerHTML = data.status;
+    erroTexto.innerHTML = data;
 
-    if(data.status == "Usuario cadastrado com sucesso") {
+    if(data == "OK") {
         location.href = "../telaDeLogin/index.html";
     }
 

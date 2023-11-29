@@ -37,6 +37,7 @@
             <button id="addComida" class="add adm">Add Comida</button>
             <button id="removeComida" class="remove adm">Remove Comida</button>
             <h1>Cardapio:</h1>
+            <div></div>
 
             <!-- <div class="categoria">
                 <h2>nome da categoria</h2>
@@ -89,6 +90,8 @@
             <input type="number" id="notaCritica" placeholder="Nota" max="5" min="0">
             <button id="addCritica">Postar Crítica</button>
             <h1>Criticas ao Restaurante</h1>
+
+            <div></div>
 
             <!-- <div class="critica">
                 <div class="usu">
@@ -145,13 +148,32 @@
         <!-- criar categoria -->
         <button class="closeWindow">X</button>
         <h1>Qual categoria gostaria de remover</h1>
-        <div></div>
-        <!-- <label>
-            <input type="radio" value="placeholder" class="selecao">
-            <b>placeholder</b>
-        </label> -->
+        <div>
+            <!-- <label>
+                <input type="radio" value="placeholder" class="selecao">
+                <b>placeholder</b>
+            </label> -->
+        </div>
         <button id="cRemove">remover Categoria</button>
 
+    </div>
+
+    <div class="flutuante" id="addComidaWindow">
+        <!-- criar comida -->
+        <button class="closeWindow">X</button>
+        <h1>Nome da Categoria</h1>
+        <input type="text" id="coNome" placeholder="Nome da comida">
+        <input type="text" id="coDesc" placeholder="Descriçao da comida">
+        <input type="number" id="coPreco" placeholder="Preço da comida">
+        <input type="file" id="coImg" placeholder="foto da comida" accept=".png,.jpg,.jpe">
+        <h1>Qual categoria gostaria de adicionar a comida</h1>
+        <div>
+            <!-- <label>
+                <input type="radio" value="placeholder" class="selecao">
+                <b>placeholder</b>
+            </label>-->
+        </div>
+        <button id="coAdd">Adicionar Comida</button>
     </div>
 
 
