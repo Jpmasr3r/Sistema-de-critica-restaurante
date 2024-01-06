@@ -1,5 +1,5 @@
 async function getLogado() {
-	let data = await fetch("../assets/php/get/getLogado.php").then(res => res.text());
+	let data = await fetch("../api/php/get/getLogado.php").then(res => res.text());
 	if (data == "Nao Logado") {
 		location.href = "../telaDeLogin/index.html";
 	}
@@ -31,7 +31,7 @@ let areaCriticas = document.querySelector("#areaCriticas");
 
 async function getInfs() {
 	try {
-		let data = await fetch("../assets/php/get/getSelectedUser.php").then(res => res.json());
+		let data = await fetch("../api/php/get/getSelectedUser.php").then(res => res.json());
 		nome.innerHTML = `<label>Nome: </label>${data.nome}`;
 		telefone.innerHTML = `<label>Telefone: </label>55+ 51 ${data.telefone}`;
 		tipo.innerHTML = `${data.tipo}`.toUpperCase();
@@ -47,7 +47,7 @@ async function getInfs() {
 
 async function getCriticas() {
 	try {
-		let data = await fetch("../assets/php/get/getAllCriticasUser.php").then(res => res.json());
+		let data = await fetch("../api/php/get/getAllCriticasUser.php").then(res => res.json());
 		console.log(data);
 		return data;
 	} catch (error) {
@@ -86,7 +86,7 @@ async function printCriticas() {
 
 		divCritica.addEventListener("click", async () => {
 			try {
-				let data = await fetch(`../assets/php/set/setSelectedRestaurante.php?id=${e.restauranteID}`).then(res => res.text());
+				let data = await fetch(`../api/php/set/setSelectedRestaurante.php?id=${e.restauranteID}`).then(res => res.text());
 				if (data == "OK") {
 					location.href = "../perfilRestaurante/index.html";
 				}

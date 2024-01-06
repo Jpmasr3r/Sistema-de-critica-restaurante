@@ -1,5 +1,5 @@
 async function getLogado() {
-    let data = await fetch("../assets/php/get/getLogado.php").then(res => res.text());
+    let data = await fetch("../api/php/get/getLogado.php").then(res => res.text());
     if(data == "Nao Logado") {
         location.href = "../telaDeLogin/index.html";
     }
@@ -43,7 +43,7 @@ async function addRestaurante(restaurante) {
         formData.append(i, e);
     }
 
-    let data = await fetch("../assets/php/set/setRestaurante.php", {
+    let data = await fetch("../api/php/set/setRestaurante.php", {
         method: "POST",
         body: formData,
     }).then(res => res.text());
