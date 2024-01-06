@@ -1,10 +1,10 @@
 <?php
 
-$host = "mysql";
+$host = "viaduct.proxy.rlwy.net";
 $user = "root";
-$password = "12345";
-$database = "trabalhoPW";
-$port = 3306;
+$password = "ecaA21D3HF-3G4E6E6Fa3c41dfCg1h13";
+$database = "railway";
+$port = 44060;
 $options = [
     PDO::ATTR_ERRMODE =>
     PDO::ERRMODE_EXCEPTION,

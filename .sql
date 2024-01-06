@@ -1,5 +1,5 @@
--- Active: 1698895343792@@localhost@3320@trabalhoPW
-USE trabalhoPW;
+-- Active: 1704566399516@@viaduct.proxy.rlwy.net@44060@railway
+
 -- tabela user
 CREATE TABLE user(
     id INT NOT NULL KEY AUTO_INCREMENT,
