@@ -14,18 +14,27 @@ login.addEventListener("click", () => {
 });
 
 async function getUser() {
+    // try {
+    //     let data = await fetch(`../api/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.text());
+
+    //     console.log(data);
+    //     erroTexto.style.display = "flex";
+    //     erroTexto.innerHTML = data.status;
+
+    //     if (data.status == "Logado com sucesso") {
+    //         location.href = "../areaDePesquisa/index.html";
+    //     }
+    // } catch (error) {
+    //     console.log(error);
+    // }
+
     try {
-        let data = await fetch(`../api/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.text());
+        let data = await fetch("/connection.php").then(res => res.text());
 
         console.log(data);
-        erroTexto.style.display = "flex";
-        erroTexto.innerHTML = data.status;
-
-        if (data.status == "Logado com sucesso") {
-            location.href = "../areaDePesquisa/index.html";
-        }
     } catch (error) {
-        console.log(error);
+        console.log(data);
+
     }
 
 }
