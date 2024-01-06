@@ -29,11 +29,11 @@ async function getUser() {
     // }
 
     try {
-        let data = await fetch("/connection.php").then(res => res.text());
+        let data = await fetch("/connection.php").then(res => res.json());
 
         console.log(data);
     } catch (error) {
-        console.log(data);
+        console.log(error);
 
     }
 
