@@ -7,10 +7,10 @@ async function getLogado() {
 
 getLogado();
 
-let carrinhoButton = document.querySelector("#carrinhoButton");
-carrinhoButton.addEventListener("click", () => {
-    location.href = "../carrinho/index.html";
-});
+// let carrinhoButton = document.querySelector("#carrinhoButton");
+// carrinhoButton.addEventListener("click", () => {
+//     location.href = "../carrinho/index.html";
+// });
 
 let logout = document.querySelector("#logout");
 logout.addEventListener("click", async () => {

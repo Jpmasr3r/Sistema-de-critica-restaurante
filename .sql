@@ -60,6 +60,7 @@ DELETE FROM user;
 DELETE FROM restaurante;
 DELETE FROM critica;
 DELETE FROM categoria;
+DELETE FROM comida;
 -- select das tabelas
 SELECT *
 FROM user;
