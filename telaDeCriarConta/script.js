@@ -66,7 +66,7 @@ async function addUser(user) {
         formData.append(i, e);
     }
 
-    let data = await fetch("../api/php/set/setUser.php", {
+    let data = await fetch("../api/setUser.php", {
         method: "POST",
         body: formData,
     }).then(res => res.text());

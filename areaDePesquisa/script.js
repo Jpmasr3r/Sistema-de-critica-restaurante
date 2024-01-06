@@ -1,5 +1,5 @@
 async function getLogado() {
-    let data = await fetch("../api/php/get/getLogado.php").then(res => res.text());
+    let data = await fetch("../api/getLogado.php").then(res => res.text());
     if (data == "Nao Logado") {
         location.href = "../telaDeLogin/index.html";
     }
@@ -14,7 +14,7 @@ getLogado();
 
 let logout = document.querySelector("#logout");
 logout.addEventListener("click", async () => {
-    let data = await fetch("../api/php/set/setDeslogado.php").then(res => res.text());
+    let data = await fetch("../api/setDeslogado.php").then(res => res.text());
     console.log(data);
     if (data == "OK") {
         location.href = "../telaDeLogin/index.html";
@@ -86,7 +86,7 @@ tipo.forEach(e => {
 
 async function getAllUsers() {
     try {
-        let data = await fetch("../api/php/get/getAllUsers.php").then(res => res.json());
+        let data = await fetch("../api/getAllUsers.php").then(res => res.json());
         return await data;
     } catch (error) {
         console.log(error);
@@ -122,7 +122,7 @@ async function printAllUsers(tipo) {
 
             div.addEventListener("click", async () => {
                 try {
-                    let data = await fetch(`../api/php/set/setSelectedUser.php?id=${e.id}`).then(res => res.text());
+                    let data = await fetch(`../api/setSelectedUser.php?id=${e.id}`).then(res => res.text());
                     if (data == "OK") {
                         location.href = "../perfil/index.html";
                     }
@@ -152,7 +152,7 @@ async function printAllUsers(tipo) {
 
 async function getAllRestaurantes() {
     try {
-        let data = await fetch("../api/php/get/getAllRestaurantes.php").then(res => res.json());
+        let data = await fetch("../api/getAllRestaurantes.php").then(res => res.json());
         return await data;
     } catch (error) {
         console.log(error.message);
@@ -207,7 +207,7 @@ async function printRestaurantes() {
 
             div.addEventListener("click", async () => {
                 try {
-                    let data = await fetch(`../api/php/set/setSelectedRestaurante.php?id=${e.id}`).then(res => res.text());
+                    let data = await fetch(`../api/setSelectedRestaurante.php?id=${e.id}`).then(res => res.text());
                     if (data == "OK") {
                         location.href = "../perfilRestaurante/index.html";
                     }

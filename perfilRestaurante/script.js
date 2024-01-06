@@ -1,5 +1,5 @@
 async function getLogado() {
-	let data = await fetch("../api/php/get/getLogado.php").then(res => res.text());
+	let data = await fetch("../api/getLogado.php").then(res => res.text());
 	if (data == "Nao Logado") {
 		location.href = "../telaDeLogin/index.html";
 	}
@@ -33,14 +33,14 @@ voltar.addEventListener("click", () => {
 
 async function getInfs() {
 	try {
-		const data = await fetch("../api/php/get/getSelectedRestaurante.php").then(res => res.json());
+		const data = await fetch("../api/getSelectedRestaurante.php").then(res => res.json());
 		if (data.status) {
 			nota.innerHTML = "Nota: ";
 			nome.innerHTML = data.resNome;
 			endereco.innerHTML = data.resEndereco;
 			dono.innerHTML = data.userNome;
 			dono.addEventListener("click", async () => {
-				let data2 = await fetch(`../api/php/set/setSelectedUser.php?id=${data.userID}`).then(res => res.text());
+				let data2 = await fetch(`../api/setSelectedUser.php?id=${data.userID}`).then(res => res.text());
 				if (data2 == "OK") {
 					location.href = "../perfil/index.html";
 				}
@@ -101,7 +101,7 @@ async function setCritica(critica) {
 		formData.append(i, e);
 	}
 
-	let data = await fetch("../api/php/set/setCritica.php", {
+	let data = await fetch("../api/setCritica.php", {
 		method: "POST",
 		body: formData,
 	}).then(res => res.text());
@@ -115,7 +115,7 @@ async function setCritica(critica) {
 
 async function getCriticas() {
 	try {
-		let data = await fetch("../api/php/get/getAllCriticas.php").then(res => res.json());
+		let data = await fetch("../api/getAllCriticas.php").then(res => res.json());
 		return data;
 	} catch (error) {
 		console.log(error);
@@ -142,7 +142,7 @@ async function printCriticas() {
 		aInfUser.innerHTML = e.userNome;
 
 		aInfUser.addEventListener("click", async () => {
-			let data = await fetch(`../api/php/set/setSelectedUser.php?id=${e.userID}`).then(res => res.text());
+			let data = await fetch(`../api/setSelectedUser.php?id=${e.userID}`).then(res => res.text());
 			if (data == "OK") {
 				location.href = "../perfil/index.html";
 			}
@@ -199,7 +199,7 @@ async function printCriticas() {
 	let formData = new FormData();
 	formData.append("nota", mediaCriticas);
 
-	let data = await fetch("../api/php/set/setNotaRestaurante.php", {
+	let data = await fetch("../api/setNotaRestaurante.php", {
 		method: "POST",
 		body: formData,
 	}).then(res => res.text());
@@ -232,7 +232,7 @@ async function adm() {
 	});
 
 	async function buttons() {
-		let response = await fetch("/api/php/get/getCategorias.php").then(res => res.json());
+		let response = await fetch("/api/getCategorias.php").then(res => res.json());
 		if (!response.data.length) {
 			document.querySelector("#removeCategoria").style.display = "none";
 			document.querySelector("#addComida").style.display = "none";
@@ -258,7 +258,7 @@ async function adm() {
 	document.querySelector("#cAdd").addEventListener("click", async () => {
 		let formData = new FormData();
 		formData.append("cNome", document.querySelector("#cNome").value);
-		let data = await fetch("/api/php/set/setCategoria.php", {
+		let data = await fetch("/api/setCategoria.php", {
 			method: "POST",
 			body: formData,
 		}).then(res => res.json());
@@ -277,7 +277,7 @@ async function adm() {
 	let removeCategoria = document.querySelector("#removeCategoria");
 	let removeCategoriaWindow = document.querySelector("#removeCategoriaWindow");
 	removeCategoria.addEventListener("click", async () => {
-		let response = await fetch("/api/php/get/getCategorias.php").then(res => res.json());
+		let response = await fetch("/api/getCategorias.php").then(res => res.json());
 		flutuante.forEach(e => {
 			e.style.display = "none";
 		});
@@ -303,7 +303,7 @@ async function adm() {
 				if (input.checked) {
 					let formData = new FormData();
 					formData.append("categoriaID", input.value);
-					let data = await fetch("/api/php/remove/removeCategoria.php", {
+					let data = await fetch("/apiove/removeCategoria.php", {
 						method: "POST",
 						body: formData
 					}).then(res => res.json());
@@ -334,7 +334,7 @@ async function adm() {
 		});
 		addComidaWindow.style.display = "flex";
 
-		let response = await fetch("/api/php/get/getCategorias.php").then(res => res.json());
+		let response = await fetch("/api/getCategorias.php").then(res => res.json());
 		addComidaWindow.querySelector("div").innerHTML = "";
 		response.data.forEach(async e => {
 			let coNome = document.querySelector("#coNome");
@@ -366,7 +366,7 @@ async function adm() {
 					formData.append("comidaDesc", coDesc.value);
 					formData.append("comidaPreco", coPreco.value);
 					formData.append("comidaFoto", coImg.files[0]);
-					let data = await fetch("/api/php/set/setComida.php", {
+					let data = await fetch("/api/setComida.php", {
 						method: "POST",
 						body: formData
 					}).then(res => res.json());
@@ -392,7 +392,7 @@ async function adm() {
 }
 
 async function printCardapio() {
-	let data = await fetch("/api/php/get/getCategorias.php").then(res => res.json());
+	let data = await fetch("/api/getCategorias.php").then(res => res.json());
 
 	if (data.success) {
 		cardapio.innerHTML = "";
@@ -405,7 +405,7 @@ async function printCardapio() {
 
 			div.appendChild(h2);
 
-			let data2 = await fetch(`/api/php/get/getComida.php?categoriaID=${e.categoriaID}`).then(res => res.json());
+			let data2 = await fetch(`/api/getComida.php?categoriaID=${e.categoriaID}`).then(res => res.json());
 
 			// <div class="comida">
 			//         <img src="../src/img/comidas/comida3.png" alt="" class="imagemComida">
