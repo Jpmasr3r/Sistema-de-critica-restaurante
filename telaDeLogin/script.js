@@ -14,12 +14,17 @@ login.addEventListener("click", () => {
 });
 
 async function getUser() {
-    let data = await fetch(`../api/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
+    try {
+        let data = await fetch(`../api/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.json());
 
-    erroTexto.style.display = "flex";
-    erroTexto.innerHTML = data.status;
+        erroTexto.style.display = "flex";
+        erroTexto.innerHTML = data.status;
 
-    if(data.status == "Logado com sucesso") {
-        location.href = "../areaDePesquisa/index.html";
+        if (data.status == "Logado com sucesso") {
+            location.href = "../areaDePesquisa/index.html";
+        }
+    } catch (error) {
+        console.log(error);
     }
+
 }
