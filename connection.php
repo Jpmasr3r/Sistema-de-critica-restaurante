@@ -25,10 +25,10 @@ try {
     $output = [
         "status" => "Conexao Bem Sucedida",
     ];
-    echo json_encode($output);
+    // echo json_encode($output);
 } catch (PDOException $e) {
     $output = [
         "status"=> "Conexao Falha :" . $e->getMessage(),
     ];
-    echo json_encode($output);
+    // echo json_encode($output);
 }
