@@ -17,6 +17,7 @@ async function getUser() {
     try {
         let data = await fetch(`../api/setLogado.php?email=${email.value}&senha=${senha.value}`).then(res => res.text());
 
+        console.log(data);
         erroTexto.style.display = "flex";
         erroTexto.innerHTML = data.status;
 
